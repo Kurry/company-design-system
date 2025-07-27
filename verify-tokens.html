@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens Verification</title>
+    <link rel="stylesheet" href="dist/browser-company.css">
+</head>
+<body class="p-8">
+    <h1 class="text-4xl font-bold mb-8">Design Tokens Verification</h1>
+    
+    <!-- Test our main design tokens -->
+    <div class="space-y-8">
+        <!-- Black Scale Test -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Black Scale - Working Examples</h2>
+            <div class="grid grid-cols-6 gap-4">
+                <div class="bg-black text-white p-4 text-center">bg-black</div>
+                <div class="bg-black-90 text-white p-4 text-center">bg-black-90</div>
+                <div class="bg-black-80 text-white p-4 text-center">bg-black-80</div>
+                <div class="bg-black-64 text-white p-4 text-center">bg-black-64</div>
+                <div class="bg-black-50 text-white p-4 text-center">bg-black-50</div>
+                <div class="bg-black-30 text-black p-4 text-center">bg-black-30</div>
+            </div>
+        </div>
+
+        <!-- White Scale Test -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">White Scale - Working Examples</h2>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-white text-black p-4 text-center border">bg-white</div>
+                <div class="bg-white-true text-black p-4 text-center border">bg-white-true</div>
+                <div class="bg-white-90 text-black p-4 text-center border">bg-white-90</div>
+                <div class="bg-white-50 text-black p-4 text-center border">bg-white-50</div>
+            </div>
+        </div>
+
+        <!-- Core Colors Test -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Core Colors - Working Examples</h2>
+            <div class="grid grid-cols-6 gap-4">
+                <div class="bg-red text-white p-4 text-center">bg-red</div>
+                <div class="bg-blue text-white p-4 text-center">bg-blue</div>
+                <div class="bg-yellow text-black p-4 text-center">bg-yellow</div>
+                <div class="bg-green text-white p-4 text-center">bg-green</div>
+                <div class="bg-purple text-white p-4 text-center">bg-purple</div>
+                <div class="bg-orange text-white p-4 text-center">bg-orange</div>
+            </div>
+        </div>
+
+        <!-- Semantic Colors Test -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Semantic Colors - Working Examples</h2>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-primary text-white p-4 text-center">bg-primary</div>
+                <div class="bg-success text-white p-4 text-center">bg-success</div>
+                <div class="bg-warning text-black p-4 text-center">bg-warning</div>
+                <div class="bg-error text-white p-4 text-center">bg-error</div>
+            </div>
+        </div>
+
+        <!-- Text Colors Test -->
+        <div class="bg-white p-6 rounded-lg border">
+            <h2 class="text-2xl font-bold mb-4">Text Colors - Working Examples</h2>
+            <div class="space-y-2">
+                <p class="text-black">text-black: Primary text color</p>
+                <p class="text-black-90">text-black-90: High emphasis text</p>
+                <p class="text-black-64">text-black-64: Secondary text</p>
+                <p class="text-black-50">text-black-50: Muted text</p>
+                <p class="text-red">text-red: Error color</p>
+                <p class="text-blue">text-blue: Link color</p>
+                <p class="text-green">text-green: Success color</p>
+            </div>
+        </div>
+
+        <!-- New Slash Syntax Test -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Tailwind v4 Slash Syntax - Working Examples</h2>
+            <div class="grid grid-cols-5 gap-4">
+                <div class="bg-black/10 text-black p-4 text-center border">bg-black/10</div>
+                <div class="bg-black/25 text-black p-4 text-center border">bg-black/25</div>
+                <div class="bg-black/50 text-white p-4 text-center">bg-black/50</div>
+                <div class="bg-red/20 text-black p-4 text-center border">bg-red/20</div>
+                <div class="bg-blue/30 text-black p-4 text-center border">bg-blue/30</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-12 p-6 bg-green-100 border-l-4 border-green-500">
+        <h3 class="text-lg font-bold text-green-800">✅ Verification Result</h3>
+        <p class="text-green-700">If you can see colors in all the boxes above, then your design tokens are working correctly!</p>
+        <p class="text-green-600 text-sm mt-2">Tailwind CSS v4 generates utilities for your custom --color-* variables automatically.</p>
+    </div>
+</body>
+</html>

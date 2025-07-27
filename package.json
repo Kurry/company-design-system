@@ -25,7 +25,9 @@
     "preview": "open preview/index.html",
     "clean": "rm -rf dist/",
     "lint": "npx eslint preview/*.html",
-    "lint:fix": "npx eslint preview/*.html --fix"
+    "lint:fix": "npx eslint preview/*.html --fix",
+    "test": "npm run build && node test-final.cjs",
+    "test:verify": "npm run build && open verify-tokens.html"
   },
   "keywords": [
     "design-system",
@@ -54,7 +56,8 @@
     "@html-eslint/eslint-plugin": "^0.43.1",
     "@html-eslint/parser": "^0.43.0",
     "@tailwindcss/cli": "^4.1.11",
-    "eslint-plugin-better-tailwindcss": "^3.7.2"
+    "eslint-plugin-better-tailwindcss": "^3.7.2",
+    "jsdom": "^26.1.0"
   },
   "publishConfig": {
     "access": "public"
