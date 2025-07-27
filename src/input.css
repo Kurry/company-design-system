@@ -1,0 +1,1048 @@
+/**
+ * Modern Design System - Tailwind CSS v4 Implementation
+ * 
+ * A comprehensive design system with custom tokens and components
+ * Built for Tailwind v4 with @theme directive
+ */
+
+ @import "tailwindcss";
+
+ @theme {
+  /* Modern Design System - Custom Design Tokens */
+
+  /* === PRIMARY BRAND COLORS === */
+  --color-brand-dark-blue: #000354;
+  --color-brand-deep-blue: #2404AA;
+  --color-brand-blue: #3139FB;
+  --color-brand-blue-alt: #0047FF;
+  --color-brand-deep-purple: #2702C2;
+  --color-brand-red: #FB3A4D;
+  --color-brand-red-alt: #FF3333;
+  --color-brand-pink: #FB3AA2;
+  --color-brand-offwhite: #FFFCEC;
+  --color-brand-cream: #FFFCEA;
+  --color-focus-outline: #96C4FF;
+
+  /* === EXTENDED BRAND COLORS === */
+  --color-brand-purple: #5856D6;
+  --color-brand-orange: #FF9500;
+  --color-brand-yellow: #FFCC00;
+  --color-brand-green: #34C759;
+  --color-brand-pink-alt: #FF2D92;
+
+  /* === PURPLE SYSTEM === */
+  --color-purple: #5d2de6;
+  --color-purple-hover: #4a24b8;
+  --color-purple-5: #5d2de60d;
+  --color-purple-8: #5d2de614;
+  --color-purple-15: #5d2de626;
+  --color-purple-16: #5d2de629;
+  --color-purple-30: #5d2de64d;
+  --color-purple-50-alpha: #5d2de680;
+  --color-purple-600: #7C3AED;
+
+  /* === BLUE SYSTEM === */
+  --color-primary-blue: rgb(12, 80, 255);
+  --color-primary-blue-pale: rgb(69, 138, 255);
+  --color-deep-blue: rgb(36, 4, 170);
+  --color-dark-blue: rgb(39, 2, 194);
+  --color-light-blue: rgb(205, 204, 223);
+
+  /* === NEUTRAL COLORS === */
+  --color-neutral-offwhite: rgb(245, 244, 226);
+  --color-neutral-dark: rgb(60, 59, 58);
+  --color-neutral-light: rgb(225, 224, 206);
+  --color-neutral-light-hover: rgb(215, 214, 196);
+  --color-neutral-text-light: rgb(151, 146, 143);
+  --color-neutral-text-dark: rgb(118, 110, 106);
+  --color-neutral-medium: #8E8E93;
+
+  /* === ACCENT COLORS === */
+  --color-accent-pinkish: rgb(242, 94, 107);
+  --color-accent-green: rgb(211, 224, 129);
+  --color-accent-salmon: rgb(242, 194, 172);
+  --color-accent-purple: rgb(124, 58, 237);
+  --color-accent-orange: #E39A44;
+  --color-accent-yellow: #F0B167;
+  --color-accent-pink: #F19E9C;
+  --color-accent-blue-light: #C6C8F9;
+  --color-accent-purple-light: #E0E0F7;
+
+  /* === SEMANTIC COLORS === */
+  --color-surface-gray: rgb(245, 245, 245);
+  --color-error-dark: #580808;
+  --color-error-light: #fcdede;
+  --color-error-red: #E84B58;
+  --color-success-light: #c5f1d8;
+  --color-inspector-props: #999999;
+  --color-warning-brown: #825725;
+  --color-warning-red: #9F484D;
+
+  /* === GRAY SCALE === */
+  --color-gray-500: #6F6F6F;
+  --color-gray-550: #7D7D7D;
+  --color-gray-700: #374151;
+  --color-gray-800: #171717;
+  --color-gray-850: #1E1E1E;
+  --color-gray-900: #282828;
+  --color-light-gray: #D6D6D6;
+  --color-surface-light: #F6F6F6;
+
+  /* === OPACITY VARIANTS === */
+  --color-black: #000000;
+  --color-black-5: #0000000d;
+  --color-black-8: #00000014;
+  --color-black-10: #0000001a;
+  --color-black-15: #00000026;
+  --color-black-16: #00000029;
+  --color-black-25: #00000040;
+  --color-white: #FFFFFF;
+  --color-white-5: #ffffff0d;
+  --color-white-8: #ffffff14;
+  --color-white-10: #ffffff1a;
+  --color-white-15: #ffffff26;
+  --color-white-25: #ffffff40;
+  --color-white-30: #ffffff4d;
+
+  /* === TYPOGRAPHY === */
+  --font-family-sans: Marlin, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-body: "InterVariable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-mono: ABC Favorit Mono, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  --font-family-soft-sans: Marlin Soft SQ, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  /* === FONT SIZES (Custom scale) === */
+  --font-size-10: 10px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+  --font-size-48: 48px;
+
+  /* === LINE HEIGHTS === */
+  --line-height-12: 12px;
+  --line-height-16: 16px; 
+  --line-height-20: 20px;
+  --line-height-24: 24px;
+  --line-height-32: 32px;
+  --line-height-40: 40px;
+  --line-height-48: 48px;
+  --line-height-56: 56px;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.3;
+  --line-height-relaxed: 1.4;
+  --line-height-loose: 1.5;
+
+  /* === LETTER SPACING === */
+  --letter-spacing-tight: -0.5px;
+  --letter-spacing-normal: 0px;
+  --letter-spacing-wide: 0.15em;
+  --letter-spacing-extra-wide: 1px;
+
+  /* === LAYOUT === */
+  --layout-padding: 32px;
+  --layout-page-padding-left: max(env(safe-area-inset-left), var(--layout-padding));
+  --layout-page-padding-right: max(env(safe-area-inset-right), var(--layout-padding));
+  --layout-max-width: 1280px;
+  --layout-navbar-height: 64px;
+  --layout-mobile-cta-height: 56px;
+
+  /* === BORDER RADIUS === */
+  --radius-2: 2px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-32: 32px;
+  --radius-round: 9999px;
+
+  /* === SHADOWS === */
+  --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
+
+  /* === ANIMATION === */
+  --duration-instant: 0s;
+  --duration-fast: 0.1s;
+  --duration-transform: 0.15s;
+  --duration-normal: 0.2s;
+  --duration-slow: 0.3s;
+  --duration-marquee: 3s;
+
+  /* === TIMING FUNCTIONS === */
+  --ease-standard: cubic-bezier(.4,0,.6,1);
+  --duration-transform-alt: 0.15s;
+
+  /* === Z-INDEX SCALE === */
+  --z-hide: -1;
+  --z-auto: auto;
+  --z-base: 0;
+  --z-docked: 10;
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-banner: 40;
+  --z-overlay: 50;
+  --z-modal: 99;
+  --z-popover: 100;
+  --z-skip-link: 999999;
+  --z-toast: 2147483647;
+
+  /* === GRADIENTS === */
+  --gradient-conic-rainbow: conic-gradient(from 180deg at 50% 50%, rgb(140, 172, 255) 0deg, rgb(240, 180, 255) 108deg, rgb(255, 255, 255) 196.2deg, rgb(255, 137, 179) 313.2deg, rgb(140, 172, 255) 360deg);
+
+  /* === BLUR EFFECTS === */
+  --blur-none: blur(0px);
+  --blur-sm: blur(5px);
+}
+
+ @layer base {
+  html {
+    font-family: var(--font-family-body);
+    font-size: 16px;
+    line-height: var(--line-height-loose);
+  }
+
+  body {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+}
+
+ @layer components {
+  /* === MODERN COMPONENTS === */
+  
+  .gradient-rainbow {
+    background: var(--gradient-conic-rainbow);
+  }
+
+  .focus-ring {
+    outline: 2px solid var(--color-focus-outline);
+    outline-offset: 2px;
+  }
+
+  .safe-area {
+    padding-left: var(--layout-page-padding-left);
+    padding-right: var(--layout-page-padding-right);
+  }
+
+  /* Button System */
+  .btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--radius-10);
+    font-weight: 600;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    backface-visibility: hidden;
+    will-change: transform;
+    transition: transform var(--duration-transform), box-shadow var(--duration-transform);
+    text-decoration: none;
+  }
+  .btn:hover,
+  .btn:focus {
+    transform: scale(1.02);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn:focus {
+    outline: 2px solid var(--color-focus-outline);
+    outline-offset: 2px;
+  }
+
+  .btn:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Button Sizes */
+  .btn-sm {
+    font-size: 12px;
+    padding: 0px 12px;
+  }
+
+  .btn-md {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .btn-lg {
+    font-size: 14px;
+    padding: 8px 24px;
+    min-width: 273px;
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    background-color: var(--color-brand-blue);
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: var(--color-brand-blue-alt);
+    color: white;
+  }
+  
+  .btn-purple {
+    background-color: var(--color-brand-deep-purple);
+    color: white;
+  }
+  
+  .btn-danger {
+    background-color: var(--color-brand-red);
+    color: white;
+  }
+  
+  .btn-danger-alt {
+    background-color: var(--color-brand-red-alt);
+    color: white;
+  }
+  
+  .btn-pink {
+    background-color: var(--color-brand-pink);
+    color: white;
+  }
+
+  /* Navigation Link System */
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-8);
+    cursor: pointer;
+    transition: transform var(--duration-transform), background var(--duration-transform);
+    transform: scale(1);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    transform: scale(1.05);
+  }
+
+  .nav-link:active {
+    transform: scale(1);
+  }
+
+  /* Card Component */
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-10);
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+  }
+
+  .card-hover {
+    transition: transform var(--duration-transform), box-shadow var(--duration-transform);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+  }
+
+  /* Surface Component */
+  .surface {
+    background-color: var(--color-surface-light);
+    border-radius: var(--radius-8);
+  }
+
+  .surface-gray {
+    background-color: var(--color-surface-gray);
+  }
+}
+
+ @layer utilities {
+  /* === MODERN UTILITIES === */
+  
+  /* Blur utilities */
+  .blur-xs {
+    filter: var(--blur-sm);
+  }
+
+  /* Transform utilities */
+  .transform-hover {
+    transform: scale(1.02);
+  }
+
+  .transform-active {
+    transform: scale(0.98);
+  }
+
+  .transform-nav-hover {
+    transform: scale(1.05);
+  }
+
+  /* Background utilities for brand colors */
+  .bg-brand-offwhite {
+    background-color: var(--color-brand-offwhite);
+  }
+  
+  .bg-brand-blue {
+    background-color: var(--color-brand-blue);
+  }
+  
+  .bg-brand-blue-alt {
+    background-color: var(--color-brand-blue-alt);
+  }
+  
+  .bg-brand-deep-purple {
+    background-color: var(--color-brand-deep-purple);
+  }
+  
+  .bg-brand-red {
+    background-color: var(--color-brand-red);
+  }
+  
+  .bg-brand-red-alt {
+    background-color: var(--color-brand-red-alt);
+  }
+  
+  .bg-brand-pink {
+    background-color: var(--color-brand-pink);
+  }
+  
+  .bg-brand-cream {
+    background-color: var(--color-brand-cream);
+  }
+
+  /* Background utilities for accent colors */
+  .bg-accent-orange {
+    background-color: var(--color-accent-orange);
+  }
+  
+  .bg-accent-yellow {
+    background-color: var(--color-accent-yellow);
+  }
+  
+  .bg-accent-pink {
+    background-color: var(--color-accent-pink);
+  }
+  
+  .bg-accent-blue-light {
+    background-color: var(--color-accent-blue-light);
+  }
+  
+  .bg-accent-purple-light {
+    background-color: var(--color-accent-purple-light);
+  }
+
+  /* Background utilities for neutral colors */
+  .bg-neutral-offwhite {
+    background-color: var(--color-neutral-offwhite);
+  }
+  
+  .bg-neutral-dark {
+    background-color: var(--color-neutral-dark);
+  }
+  
+  .bg-neutral-light {
+    background-color: var(--color-neutral-light);
+  }
+
+  /* Text color utilities for brand colors */
+  .text-brand-blue {
+    color: var(--color-brand-blue);
+  }
+  
+  .text-brand-blue-alt {
+    color: var(--color-brand-blue-alt);
+  }
+  
+  .text-brand-deep-purple {
+    color: var(--color-brand-deep-purple);
+  }
+  
+  .text-brand-red {
+    color: var(--color-brand-red);
+  }
+  
+  .text-brand-red-alt {
+    color: var(--color-brand-red-alt);
+  }
+  
+  .text-brand-pink {
+    color: var(--color-brand-pink);
+  }
+
+  /* Text color utilities for semantic colors */
+  .text-warning-brown {
+    color: var(--color-warning-brown);
+  }
+  
+  .text-warning-red {
+    color: var(--color-warning-red);
+  }
+  
+  .text-error {
+    color: var(--color-error-red);
+  }
+  
+  .text-success {
+    color: var(--color-success-light);
+  }
+
+  /* Text color utilities for accent colors */
+  .text-accent-orange {
+    color: var(--color-accent-orange);
+  }
+  
+  .text-accent-yellow {
+    color: var(--color-accent-yellow);
+  }
+  
+  .text-accent-pink {
+    color: var(--color-accent-pink);
+  }
+  
+  .text-accent-blue-light {
+    color: var(--color-accent-blue-light);
+  }
+  
+  .text-accent-purple-light {
+    color: var(--color-accent-purple-light);
+  }
+
+  /* Text color utilities for neutral colors */
+  .text-neutral-light {
+    color: var(--color-neutral-text-light);
+  }
+  
+  .text-neutral-dark {
+    color: var(--color-neutral-text-dark);
+  }
+
+  /* Border color utilities */
+  .border-brand-blue {
+    border-color: var(--color-brand-blue);
+  }
+  
+  .border-brand-blue-alt {
+    border-color: var(--color-brand-blue-alt);
+  }
+  
+  .border-brand-deep-purple {
+    border-color: var(--color-brand-deep-purple);
+  }
+  
+  .border-brand-red {
+    border-color: var(--color-brand-red);
+  }
+  
+  .border-brand-red-alt {
+    border-color: var(--color-brand-red-alt);
+  }
+  
+  .border-brand-pink {
+    border-color: var(--color-brand-pink);
+  }
+  
+  .border-neutral-light {
+    border-color: var(--color-neutral-light);
+  }
+  
+  .border-light-gray {
+    border-color: var(--color-light-gray);
+  }
+
+  /* Typography utilities */
+  .tracking-tight-sm {
+    letter-spacing: -0.01em;
+  }
+
+  .tracking-tight-md {
+    letter-spacing: -0.02em;
+  }
+  
+  .font-sans-primary {
+    font-family: var(--font-family-sans);
+  }
+  
+  .font-body {
+    font-family: var(--font-family-body);
+  }
+  
+  .font-mono {
+    font-family: var(--font-family-mono);
+  }
+  
+  .font-soft-sans {
+    font-family: var(--font-family-soft-sans);
+  }
+
+  /* Shadow utilities */
+  .shadow-sm {
+    box-shadow: var(--shadow-small);
+  }
+  
+  .shadow-md {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-lg {
+    box-shadow: var(--shadow-large);
+  }
+
+  /* Z-index utilities */
+  .z-docked {
+    z-index: var(--z-docked);
+  }
+  
+  .z-dropdown {
+    z-index: var(--z-dropdown);
+  }
+  
+  .z-sticky {
+    z-index: var(--z-sticky);
+  }
+  
+.z-modal {
+    z-index: var(--z-modal);
+  }
+  
+  .z-popover {
+    z-index: var(--z-popover);
+  }
+  
+  .z-toast {
+    z-index: var(--z-toast);
+  }
+
+  /* Layout utilities */
+  .max-w-layout {
+    max-width: var(--layout-max-width);
+  }
+  
+  .h-navbar {
+    height: var(--layout-navbar-height);
+  }
+  
+  .h-mobile-cta {
+    height: var(--layout-mobile-cta-height);
+  }
+
+  /* Animation utilities */
+  .duration-fast {
+    transition-duration: var(--duration-fast);
+  }
+  
+  .duration-transform {
+    transition-duration: var(--duration-transform);
+  }
+  
+  .duration-normal {
+    transition-duration: var(--duration-normal);
+  }
+  
+  .duration-slow {
+    transition-duration: var(--duration-slow);
+  }
+  
+  .ease-standard {
+    transition-timing-function: var(--ease-standard);
+  }
+}
+
+/**
+ * === USAGE GUIDE ===
+ * 
+ * This design system provides a comprehensive set of tokens and components
+ * that can be used across any project. Here are some examples:
+ * 
+ * BUTTONS:
+ * <button class="btn btn-primary btn-md">Primary Button</button>
+ * <button class="btn btn-secondary btn-lg">Large Secondary</button>
+ * 
+ * NAVIGATION:
+ * <a href="#" class="nav-link">Navigation Link</a>
+ * 
+ * CARDS:
+ * <div class="card card-hover">
+ *   <div class="p-4">Card Content</div>
+ * </div>
+ * 
+ * FORMS:
+ * <input type="text" class="input" placeholder="Enter text">
+ * <input type="email" class="input input-error" placeholder="Email">
+ * 
+ * BADGES:
+ * <span class="badge badge-primary">New</span>
+ * <span class="badge badge-success">Active</span>
+ * 
+ * UTILITIES:
+ * - Colors: bg-brand-blue, text-brand-red, border-neutral-light
+ * - Typography: font-body, tracking-tight-sm
+ * - Layout: container, safe-area, max-w-layout
+ * - Animation: animate-fade-in, animate-slide-up
+ * - Shadows: shadow-sm, shadow-md, shadow-lg
+ * 
+ * The design system is fully compatible with Tailwind's utility classes
+ * and can be extended with your own custom tokens and components.
+ */
+/* === DARK MODE SUPPORT === */
+ @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-gray-900);
+    --color-foreground: var(--color-white);
+    --color-surface: var(--color-gray-850);
+    --color-surface-hover: var(--color-gray-800);
+    --color-border: var(--color-gray-700);
+    --color-text-primary: var(--color-white);
+    --color-text-secondary: var(--color-white-8);
+    --color-text-muted: var(--color-gray-500);
+  }
+}
+
+/* === ANIMATIONS === */
+ @keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+ @keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+ @keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+ @keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+ @keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+ @layer components {
+  /* === ADDITIONAL COMPONENTS === */
+  
+  /* Badge Component */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    border-radius: var(--radius-round);
+    white-space: nowrap;
+  }
+
+  .badge-primary {
+    background-color: var(--color-brand-blue);
+    color: white;
+  }
+
+  .badge-secondary {
+    background-color: var(--color-purple-15);
+    color: var(--color-purple);
+  }
+
+  .badge-success {
+    background-color: var(--color-success-light);
+    color: var(--color-brand-green);
+  }
+
+  .badge-error {
+    background-color: var(--color-error-light);
+    color: var(--color-error-red);
+  }
+
+  /* Input Component */
+  .input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--radius-8);
+    transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+  }
+
+  .input:hover {
+    border-color: var(--color-gray-500);
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: var(--color-brand-blue);
+    box-shadow: 0 0 0 3px var(--color-brand-blue-15);
+  }
+
+  .input-error {
+    border-color: var(--color-error-red);
+  }
+
+  .input-error:focus {
+    border-color: var(--color-error-red);
+    box-shadow: 0 0 0 3px var(--color-error-light);
+  }
+
+  /* Container Component */
+  .container {
+    width: 100%;
+    max-width: var(--layout-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--layout-page-padding-left);
+    padding-right: var(--layout-page-padding-right);
+  }
+
+  /* Divider Component */
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-light-gray);
+  }
+
+  .divider-vertical {
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-light-gray);
+  }
+
+  /* Skeleton Loading Component */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-gray-200) 25%,
+      var(--color-gray-300) 50%,
+      var(--color-gray-200) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Tooltip Component */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip-content {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: var(--radius-8);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-fast), visibility var(--duration-fast);
+  }
+
+  .tooltip:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+ @layer utilities {
+  /* === ANIMATION UTILITIES === */
+  
+  .animate-pulse-slow {
+    animation: pulse-slow var(--duration-marquee) var(--ease-standard) infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up var(--duration-normal) var(--ease-standard);
+  }
+
+  .animate-slide-down {
+    animation: slide-down var(--duration-normal) var(--ease-standard);
+  }
+
+  .animate-fade-in {
+    animation: fade-in var(--duration-normal) var(--ease-standard);
+  }
+
+  .animate-scale-in {
+    animation: scale-in var(--duration-normal) var(--ease-standard);
+  }
+
+  /* === RESPONSIVE UTILITIES === */
+  
+  @media (max-width: 640px) {
+    .mobile-hidden {
+      display: none;
+    }
+  }
+
+  @media (min-width: 641px) {
+    .desktop-hidden {
+      display: none;
+    }
+  }
+
+  /* === ACCESSIBILITY UTILITIES === */
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .focus-visible:focus {
+    outline: 2px solid var(--color-focus-outline);
+    outline-offset: 2px;
+  }
+
+  /* === INTERACTION UTILITIES === */
+  
+  .pointer-events-none {
+    pointer-events: none;
+  }
+
+  .pointer-events-auto {
+    pointer-events: auto;
+  }
+
+  .select-none {
+    user-select: none;
+  }
+
+  .select-text {
+    user-select: text;
+  }
+
+  .select-all {
+    user-select: all;
+  }
+
+  /* === OVERFLOW UTILITIES === */
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-auto {
+    overflow: auto;
+  }
+
+  .overflow-scroll {
+    overflow: scroll;
+  }
+
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  /* === OPACITY UTILITIES === */
+  
+  .opacity-0 {
+    opacity: 0;
+  }
+
+  .opacity-50 {
+    opacity: 0.5;
+  }
+
+  .opacity-100 {
+    opacity: 1;
+  }
+}
+
+/**
+ * === USAGE GUIDE ===
+ * 
+ * This design system provides a comprehensive set of tokens and components
+ * that can be used across any project. Here are some examples:
+ * 
+ * BUTTONS:
+ * <button class="btn btn-primary btn-md">Primary Button</button>
+ * <button class="btn btn-secondary btn-lg">Large Secondary</button>
+ * 
+ * NAVIGATION:
+ * <a href="#" class="nav-link">Navigation Link</a>
+ * 
+ * CARDS:
+ * <div class="card card-hover">
+ *   <div class="p-4">Card Content</div>
+ * </div>
+ * 
+ * FORMS:
+ * <input type="text" class="input" placeholder="Enter text">
+ * <input type="email" class="input input-error" placeholder="Email">
+ * 
+ * BADGES:
+ * <span class="badge badge-primary">New</span>
+ * <span class="badge badge-success">Active</span>
+ * 
+ * UTILITIES:
+ * - Colors: bg-brand-blue, text-brand-red, border-neutral-light
+ * - Typography: font-body, tracking-tight-sm
+ * - Layout: container, safe-area, max-w-layout
+ * - Animation: animate-fade-in, animate-slide-up
+ * - Shadows: shadow-sm, shadow-md, shadow-lg
+ * 
+ * The design system is fully compatible with Tailwind's utility classes
+ * and can be extended with your own custom tokens and components.
+ */

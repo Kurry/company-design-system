@@ -1,0 +1,66 @@
+{
+  "name": "@browser-company/design-system",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The Browser Company Design System - Extracted and implemented with Tailwind CSS v4",
+  "main": "dist/browser-company.css",
+  "exports": {
+    ".": "./dist/browser-company.css",
+    "./tokens": "./browser-company-tokens.json",
+    "./input": "./src/input.css",
+    "./dist": "./dist/browser-company.css"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "browser-company-tokens.json",
+    "BROWSER_COMPANY_ANALYSIS.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/browser-company.css",
+    "build:watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/browser-company.css --watch",
+    "build:minify": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/browser-company.css --minify",
+    "dev": "npm run build:watch",
+    "preview": "open preview/index.html",
+    "clean": "rm -rf dist/",
+    "lint": "npx eslint preview/*.html",
+    "lint:fix": "npx eslint preview/*.html --fix"
+  },
+  "keywords": [
+    "design-system",
+    "tailwind-css",
+    "browser-company",
+    "css",
+    "design-tokens",
+    "ui-components",
+    "web-design",
+    "frontend"
+  ],
+  "author": "The Browser Company Design Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/browser-company/design-system"
+  },
+  "homepage": "https://thebrowser.company",
+  "bugs": {
+    "url": "https://github.com/company/design-system/issues"
+  },
+  "peerDependencies": {
+    "@tailwindcss/cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "@html-eslint/eslint-plugin": "^0.43.1",
+    "@html-eslint/parser": "^0.43.0",
+    "@tailwindcss/cli": "^4.1.11",
+    "eslint-plugin-better-tailwindcss": "^3.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "npm@11.4.2+sha512.f90c1ec8b207b625d6edb6693aef23dacb39c38e4217fe8c46a973f119cab392ac0de23fe3f07e583188dae9fd9108b3845ad6f525b598742bd060ebad60bff3"
+}
