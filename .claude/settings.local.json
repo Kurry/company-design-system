@@ -19,7 +19,13 @@
       "Bash(npm run lint:*)",
       "Bash(git rm:*)",
       "Bash(gh repo view:*)",
-      "Bash(gh repo edit:*)"
+      "Bash(gh repo edit:*)",
+      "Bash(git checkout:*)",
+      "Bash(grep:*)",
+      "Bash(npm run preview:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npx stylelint:*)",
+      "Bash(npm test)"
     ],
     "deny": []
   }

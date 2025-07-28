@@ -4,7 +4,7 @@ import htmlParser from '@html-eslint/parser';
 export default [
   {
     files: ['**/*.html'],
-    ignores: ['examples/**/*.html', 'node_modules/**/*.html'],
+    ignores: ['examples/**/*.html', 'node_modules/**/*.html', 'preview/index.html', 'preview/components.html'],
     languageOptions: {
       parser: htmlParser,
     },
