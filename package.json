@@ -28,7 +28,7 @@
     "lint": "npm run lint:html && npm run lint:css",
     "lint:html": "npx eslint preview/components/*.html preview/sections/*.html",
     "lint:css": "npx stylelint src/**/*.css --config-basedir .",
-    "lint:fix": "npm run lint:html -- --fix && npm run lint:css -- --fix",
+    "lint:fix": "npm run lint:html -- --fix && npm run format",
     "test": "npm run build",
     "format": "prettier --write \"**/*.{css,html,js,json,md}\" --ignore-path .gitignore",
     "format:check": "prettier --check \"**/*.{css,html,js,json,md}\" --ignore-path .gitignore",

@@ -20,7 +20,7 @@ npm run dev
 ## Components
 
 - Buttons with variants (primary, secondary, purple, danger)
-- Navigation with hover effects  
+- Navigation with hover effects
 - Cards with optional hover animations
 - Forms with focus states and error variants
 - Badges with semantic color variants

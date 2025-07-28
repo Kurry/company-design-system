@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generic Components Demo - Company Design System</title>
+    <link rel="stylesheet" href="../dist/browser-company.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero-section bg-brand-cream">
+      <div class="hero-content">
+        <h1 class="hero-title">Generic Components Showcase</h1>
+        <p class="hero-description">
+          Modern, reusable components extracted from contemporary UI patterns. Feature cards, tags, outline buttons, and
+          more.
+        </p>
+        <div class="hero-cta">
+          <a href="#components" class="btn-cta">Explore Components</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Components Grid -->
+    <section id="components" class="container py-16">
+      <h2 class="heading-browser-2 text-center mb-12">Component Gallery</h2>
+
+      <!-- Feature Cards Grid -->
+      <div class="mb-16">
+        <h3 class="heading-browser-3 mb-8">Feature Cards</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Feature Card 1 -->
+          <a href="#" class="feature-card">
+            <div class="feature-card-image">
+              <img src="https://via.placeholder.com/400x240/3139FB/ffffff?text=Research" alt="Research Feature" />
+            </div>
+            <div class="flex items-center gap-2 mt-4">
+              <span class="tag tag-sm tag-primary">Research</span>
+              <span class="tag tag-sm tag-neutral">Analysis</span>
+            </div>
+            <p class="feature-card-title">Market Analysis</p>
+            <div class="feature-card-description">
+              <h3>Comprehensive market research and competitive analysis tools.</h3>
+            </div>
+            <div class="feature-card-footer">
+              <div class="feature-card-author">
+                <img
+                  src="https://via.placeholder.com/24x24/5d2de6/ffffff?text=R"
+                  alt="Author"
+                  class="feature-card-avatar"
+                />
+                <p class="feature-card-username">@researcher</p>
+              </div>
+              <button class="feature-card-action">Learn More</button>
+            </div>
+          </a>
+
+          <!-- Feature Card 2 -->
+          <a href="#" class="feature-card">
+            <div class="feature-card-image">
+              <img src="https://via.placeholder.com/400x240/FB3A4D/ffffff?text=Writing" alt="Writing Feature" />
+            </div>
+            <div class="flex items-center gap-2 mt-4">
+              <span class="tag tag-sm tag-success">Writing</span>
+              <span class="tag tag-sm tag-warning">Content</span>
+            </div>
+            <p class="feature-card-title">Content Creation</p>
+            <div class="feature-card-description">
+              <h3>Advanced writing tools for creating engaging content and documentation.</h3>
+            </div>
+            <div class="feature-card-footer">
+              <div class="feature-card-author">
+                <img
+                  src="https://via.placeholder.com/24x24/2702C2/ffffff?text=W"
+                  alt="Author"
+                  class="feature-card-avatar"
+                />
+                <p class="feature-card-username">@writer</p>
+              </div>
+              <button class="feature-card-action">Start Writing</button>
+            </div>
+          </a>
+
+          <!-- Feature Card 3 -->
+          <a href="#" class="feature-card">
+            <div class="feature-card-image">
+              <img src="https://via.placeholder.com/400x240/FF9500/ffffff?text=Planning" alt="Planning Feature" />
+            </div>
+            <div class="flex items-center gap-2 mt-4">
+              <span class="tag tag-sm tag-purple">Planning</span>
+              <span class="tag tag-sm tag-outline tag-neutral">Strategy</span>
+            </div>
+            <p class="feature-card-title">Project Planning</p>
+            <div class="feature-card-description">
+              <h3>Strategic planning and project management with advanced workflows.</h3>
+            </div>
+            <div class="feature-card-footer">
+              <div class="feature-card-author">
+                <img
+                  src="https://via.placeholder.com/24x24/34C759/ffffff?text=P"
+                  alt="Author"
+                  class="feature-card-avatar"
+                />
+                <p class="feature-card-username">@planner</p>
+              </div>
+              <button class="feature-card-action">Get Started</button>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tags/Badges -->
+      <div class="mb-16">
+        <h3 class="heading-browser-3 mb-8">Tags & Badges</h3>
+        <div class="space-y-6">
+          <!-- Default Tags -->
+          <div>
+            <h4 class="text-sm font-semibold mb-3 text-gray-700">Default Tags</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag tag-neutral">Neutral</span>
+              <span class="tag tag-primary">Primary</span>
+              <span class="tag tag-purple">Purple</span>
+              <span class="tag tag-success">Success</span>
+              <span class="tag tag-warning">Warning</span>
+              <span class="tag tag-error">Error</span>
+            </div>
+          </div>
+
+          <!-- Small Tags -->
+          <div>
+            <h4 class="text-sm font-semibold mb-3 text-gray-700">Small Tags</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag tag-sm tag-primary">Research</span>
+              <span class="tag tag-sm tag-success">Writing</span>
+              <span class="tag tag-sm tag-purple">Planning</span>
+              <span class="tag tag-sm tag-warning">Analysis</span>
+              <span class="tag tag-sm tag-neutral">Strategy</span>
+            </div>
+          </div>
+
+          <!-- Outline Tags -->
+          <div>
+            <h4 class="text-sm font-semibold mb-3 text-gray-700">Outline Tags</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag tag-outline tag-neutral">Category</span>
+              <span class="tag tag-outline tag-primary">Featured</span>
+              <span class="tag tag-outline tag-purple">Premium</span>
+            </div>
+          </div>
+
+          <!-- Large Tags -->
+          <div>
+            <h4 class="text-sm font-semibold mb-3 text-gray-700">Large Tags</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag tag-lg tag-primary">Important</span>
+              <span class="tag tag-lg tag-success">Verified</span>
+              <span class="tag tag-lg tag-purple">Premium Plan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="mb-16">
+        <h3 class="heading-browser-3 mb-8">Button Components</h3>
+        <div class="space-y-6">
+          <!-- CTA Buttons -->
+          <div>
+            <h4 class="text-sm font-semibold mb-3 text-gray-700">CTA Buttons</h4>
+            <div class="flex flex-wrap gap-4">
+              <button class="btn-cta">Get Started</button>
+              <button class="btn-cta bg-brand-blue">Sign Up Now</button>
+              <button class="btn-cta bg-purple">Join Community</button>
+              <a href="#" class="btn-cta bg-brand-red">Download App</a>
+            </div>
+          </div>
+
+          <!-- Outline Buttons -->
+          <div>
+            <h4 class="text-sm font-semibold mb-3 text-gray-700">Outline Buttons</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl">
+              <button class="btn-outline btn-sm">See More</button>
+              <button class="btn-outline">Learn More</button>
+              <button class="btn-outline btn-lg">Explore Features</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatars -->
+      <div class="mb-16">
+        <h3 class="heading-browser-3 mb-8">Avatars</h3>
+        <div class="flex items-center gap-6">
+          <img
+            src="https://via.placeholder.com/24x24/3139FB/ffffff?text=XS"
+            alt="Extra Small"
+            class="avatar avatar-sm"
+          />
+          <img src="https://via.placeholder.com/32x32/FB3A4D/ffffff?text=S" alt="Small" class="avatar avatar-md" />
+          <img src="https://via.placeholder.com/48x48/5d2de6/ffffff?text=M" alt="Medium" class="avatar avatar-lg" />
+          <img src="https://via.placeholder.com/64x64/FF9500/ffffff?text=L" alt="Large" class="avatar avatar-xl" />
+        </div>
+      </div>
+
+      <!-- Usage Examples -->
+      <div class="mb-16">
+        <h3 class="heading-browser-3 mb-8">Component Usage</h3>
+        <div class="space-y-6">
+          <!-- Feature Card Usage -->
+          <div class="bg-neutral-offwhite p-6 rounded-lg">
+            <h4 class="text-lg font-semibold mb-4">Feature Card Structure:</h4>
+            <pre
+              class="bg-gray-900 text-white p-4 rounded text-sm overflow-x-auto"
+            ><code>&lt;a href="#" class="feature-card"&gt;
+  &lt;div class="feature-card-image"&gt;
+    &lt;img src="image.jpg" alt="Feature"&gt;
+  &lt;/div&gt;
+  &lt;div class="flex items-center gap-2 mt-4"&gt;
+    &lt;span class="tag tag-sm tag-primary"&gt;Category&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;p class="feature-card-title"&gt;Title&lt;/p&gt;
+  &lt;div class="feature-card-description"&gt;
+    &lt;h3&gt;Description content&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="feature-card-footer"&gt;
+    &lt;div class="feature-card-author"&gt;
+      &lt;img src="avatar.jpg" class="feature-card-avatar"&gt;
+      &lt;p class="feature-card-username"&gt;@username&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="feature-card-action"&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</code></pre>
+          </div>
+
+          <!-- Tag Usage -->
+          <div class="bg-neutral-offwhite p-6 rounded-lg">
+            <h4 class="text-lg font-semibold mb-4">Tag Components:</h4>
+            <pre class="bg-gray-900 text-white p-4 rounded text-sm overflow-x-auto"><code>&lt;!-- Basic tags --&gt;
+&lt;span class="tag tag-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="tag tag-sm tag-success"&gt;Small Success&lt;/span&gt;
+&lt;span class="tag tag-lg tag-purple"&gt;Large Purple&lt;/span&gt;
+
+&lt;!-- Outline variants --&gt;
+&lt;span class="tag tag-outline tag-neutral"&gt;Outline&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -70,6 +70,9 @@ temp/
 *.tgz
 *.tar.gz
 
+# Generated examples and demos (large files)
+examples/
+
 # Package lock files (choose one based on package manager preference)
 # Uncomment the one you want to ignore:
 # package-lock.json

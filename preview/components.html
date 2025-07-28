@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,67 +16,1085 @@
       }
     </style>
   </head>
-  <body
-    class="bg-brand-offwhite font-sans"
-    style="background-color: var(--color-brand-offwhite); font-family: var(--font-family-body)"
-  >
-    <!-- Include Header Component -->
-    <div id="header-component"></div>
+  <body class="bg-surface font-body">
+    <!-- Navigation Header -->
+    <nav class="bg-surface-elevated border-b border-light sticky top-0 z-50 h-navbar">
+      <div class="container safe-area">
+        <div class="flex items-center justify-between h-full">
+          <div class="flex items-center">
+            <a href="index.html" class="back-nav">
+              <svg class="back-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+              Back to Tokens
+            </a>
+          </div>
+          <div class="flex items-center">
+            <div class="avatar avatar-sm bg-brand-blue flex items-center justify-center mr-3">
+              <span class="text-white text-sm font-bold">DS</span>
+            </div>
+            <h1 class="h4 text-primary">Component Showcase</h1>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="tag tag-primary tag-sm">Components</span>
+            <span class="tag tag-success tag-sm">50+</span>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <!-- Main Content -->
     <main>
-      <!-- Include Hero Sections -->
-      <div id="hero-sections"></div>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content container">
+          <h1 class="hero-title h1 text-brand-primary mb-6">Component Library</h1>
+          <p class="hero-description p1 text-secondary mb-8">
+            A comprehensive collection of UI components built with consistent design patterns, accessibility best
+            practices, and modern CSS techniques.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-cta btn-lg" onclick="scrollToSection('buttons')">Explore Components</button>
+            <a href="index.html" class="btn btn-outline btn-lg text-brand-blue">View Design Tokens</a>
+          </div>
+        </div>
+      </section>
 
-      <!-- Include Button Components -->
-      <div id="button-components"></div>
+      <!-- Quick Navigation -->
+      <section class="py-12 bg-surface-elevated border-b border-light">
+        <div class="container">
+          <div class="flex flex-wrap justify-center gap-4">
+            <button onclick="scrollToSection('buttons')" class="btn btn-outline btn-sm text-brand-primary">
+              Buttons
+            </button>
+            <button onclick="scrollToSection('tags')" class="btn btn-outline btn-sm text-brand-primary">Tags</button>
+            <button onclick="scrollToSection('avatars')" class="btn btn-outline btn-sm text-brand-primary">
+              Avatars
+            </button>
+            <button onclick="scrollToSection('typography')" class="btn btn-outline btn-sm text-brand-primary">
+              Typography
+            </button>
+            <button onclick="scrollToSection('cards')" class="btn btn-outline btn-sm text-brand-primary">Cards</button>
+            <button onclick="scrollToSection('forms')" class="btn btn-outline btn-sm text-brand-primary">Forms</button>
+            <button onclick="scrollToSection('layouts')" class="btn btn-outline btn-sm text-brand-primary">
+              Layouts
+            </button>
+          </div>
+        </div>
+      </section>
 
-      <!-- Include Typography -->
-      <div id="typography-components"></div>
+      <!-- Button Components -->
+      <section id="buttons" class="component-section py-24">
+        <div class="container">
+          <div class="text-center mb-16">
+            <h2 class="h2 text-primary mb-4">Button Components</h2>
+            <p class="p2 text-secondary max-w-2xl mx-auto">
+              Interactive buttons with multiple variants, sizes, and states
+            </p>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Button Variants</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- CTA Buttons -->
+              <div>
+                <h4 class="h4 mb-4">CTA Buttons</h4>
+                <div class="space-y-4">
+                  <button class="btn btn-cta btn-sm w-full">Small CTA Button</button>
+                  <button class="btn btn-cta w-full">Default CTA Button</button>
+                  <button class="btn btn-cta btn-lg w-full">Large CTA Button</button>
+                  <button class="btn btn-cta" disabled>Disabled CTA</button>
+                </div>
+              </div>
+
+              <!-- Outline Buttons -->
+              <div>
+                <h4 class="h4 mb-4">Outline Buttons</h4>
+                <div class="space-y-4">
+                  <button class="btn btn-outline btn-sm w-full text-brand-blue">Small Outline</button>
+                  <button class="btn btn-outline w-full text-brand-green">Green Outline</button>
+                  <button class="btn btn-outline btn-lg w-full text-brand-red">Large Red Outline</button>
+                  <button class="btn btn-outline text-purple" disabled>Disabled Outline</button>
+                </div>
+              </div>
+
+              <!-- Custom Styled Buttons -->
+              <div>
+                <h4 class="h4 mb-4">Custom Styles</h4>
+                <div class="space-y-4">
+                  <button class="btn bg-brand-green text-white btn-sm w-full hover:bg-green">Success Button</button>
+                  <button class="btn bg-warning text-black w-full hover:bg-yellow">Warning Button</button>
+                  <button class="btn bg-error text-white btn-lg w-full hover:bg-brand-red">Error Button</button>
+                  <button class="btn bg-purple text-white w-full hover:bg-purple-600">Purple Button</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Buttons Demo -->
+          <div class="content-card">
+            <h3 class="h3 mb-6">Interactive States</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="h4 mb-4">Hover & Focus States</h4>
+                <p class="p2 text-secondary mb-4">
+                  Buttons include smooth transitions and focus indicators for accessibility
+                </p>
+                <div class="space-y-3">
+                  <button class="btn btn-cta">Hover for transform effect</button>
+                  <button class="btn btn-outline text-brand-blue">Focus with keyboard navigation</button>
+                  <button class="btn bg-purple text-white">Smooth color transitions</button>
+                </div>
+              </div>
+              <div>
+                <h4 class="h4 mb-4">Loading States</h4>
+                <p class="p2 text-secondary mb-4">Example of how buttons can be styled for loading states</p>
+                <div class="space-y-3">
+                  <button class="btn btn-cta" disabled>
+                    <div
+                      class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"
+                    ></div>
+                    Loading...
+                  </button>
+                  <button class="btn btn-outline text-brand-blue" disabled>
+                    <div
+                      class="w-4 h-4 border-2 border-brand-blue border-t-transparent rounded-full animate-spin mr-2"
+                    ></div>
+                    Processing...
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tag Components -->
+      <section id="tags" class="component-section py-24 bg-surface">
+        <div class="container">
+          <div class="text-center mb-16">
+            <h2 class="h2 text-primary mb-4">Tag Components</h2>
+            <p class="p2 text-secondary max-w-2xl mx-auto">
+              Versatile tags for categorization, status, and metadata display
+            </p>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Tag Variants</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Semantic Tags -->
+              <div>
+                <h4 class="h4 mb-4">Semantic Tags</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag tag-primary">Primary</span>
+                  <span class="tag tag-secondary">Secondary</span>
+                  <span class="tag tag-success">Success</span>
+                  <span class="tag tag-warning">Warning</span>
+                  <span class="tag tag-error">Error</span>
+                  <span class="tag tag-purple">Purple</span>
+                  <span class="tag tag-neutral">Neutral</span>
+                </div>
+              </div>
+
+              <!-- Size Variants -->
+              <div>
+                <h4 class="h4 mb-4">Size Variants</h4>
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="tag tag-primary tag-sm">Small</span>
+                  <span class="tag tag-success">Default</span>
+                  <span class="tag tag-warning tag-lg">Large</span>
+                </div>
+                <div class="mt-3">
+                  <span class="tag tag-outline tag-sm">Small Outline</span>
+                  <span class="tag tag-outline tag-lg ml-2">Large Outline</span>
+                </div>
+              </div>
+
+              <!-- Interactive Tags -->
+              <div>
+                <h4 class="h4 mb-4">Interactive Tags</h4>
+                <div class="flex flex-wrap gap-2">
+                  <button class="tag tag-primary hover:opacity-80 transition-opacity cursor-pointer">Clickable</button>
+                  <button class="tag tag-outline hover:bg-brand-blue hover:text-white transition-colors cursor-pointer">
+                    Hover Me
+                  </button>
+                  <span class="tag tag-success relative">
+                    With Badge
+                    <span class="absolute -top-1 -right-1 w-2 h-2 bg-brand-red rounded-full"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Usage Examples -->
+          <div class="content-card">
+            <h3 class="h3 mb-6">Usage Examples</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 class="h4 mb-4">Content Categorization</h4>
+                <div class="space-y-4">
+                  <div class="p-4 border border-light rounded-lg">
+                    <h5 class="font-semibold mb-2">Article Title</h5>
+                    <div class="flex flex-wrap gap-2 mb-2">
+                      <span class="tag tag-primary tag-sm">Design</span>
+                      <span class="tag tag-success tag-sm">Featured</span>
+                      <span class="tag tag-neutral tag-sm">Tutorial</span>
+                    </div>
+                    <p class="text-secondary text-sm">Article preview content...</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="h4 mb-4">Status Indicators</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between p-3 border border-light rounded-lg">
+                    <span class="font-medium">Build Pipeline</span>
+                    <span class="tag tag-success tag-sm">Passing</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 border border-light rounded-lg">
+                    <span class="font-medium">Deployment</span>
+                    <span class="tag tag-warning tag-sm">In Progress</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 border border-light rounded-lg">
+                    <span class="font-medium">Tests</span>
+                    <span class="tag tag-error tag-sm">Failed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Avatar Components -->
+      <section id="avatars" class="component-section py-24">
+        <div class="container">
+          <div class="text-center mb-16">
+            <h2 class="h2 text-primary mb-4">Avatar Components</h2>
+            <p class="p2 text-secondary max-w-2xl mx-auto">
+              User avatars in multiple sizes with flexible content options
+            </p>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Avatar Sizes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="h4 mb-4">Size Variants</h4>
+                <div class="flex items-center gap-6">
+                  <div class="text-center">
+                    <div
+                      class="avatar avatar-sm bg-brand-blue flex items-center justify-center text-white text-xs font-bold mb-2"
+                    >
+                      S
+                    </div>
+                    <span class="caption text-muted">SMALL</span>
+                  </div>
+                  <div class="text-center">
+                    <div
+                      class="avatar avatar-md bg-brand-green flex items-center justify-center text-white text-sm font-bold mb-2"
+                    >
+                      M
+                    </div>
+                    <span class="caption text-muted">MEDIUM</span>
+                  </div>
+                  <div class="text-center">
+                    <div
+                      class="avatar avatar-lg bg-brand-red flex items-center justify-center text-white font-bold mb-2"
+                    >
+                      L
+                    </div>
+                    <span class="caption text-muted">LARGE</span>
+                  </div>
+                  <div class="text-center">
+                    <div
+                      class="avatar avatar-xl bg-purple flex items-center justify-center text-white text-xl font-bold mb-2"
+                    >
+                      XL
+                    </div>
+                    <span class="caption text-muted">EXTRA LARGE</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="h4 mb-4">Avatar Patterns</h4>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="avatar avatar-md bg-gradient-rainbow flex items-center justify-center text-white font-bold"
+                    >
+                      BC
+                    </div>
+                    <div>
+                      <div class="font-semibold">Browser Company</div>
+                      <div class="text-muted text-sm">Gradient background</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="avatar avatar-md bg-surface-muted border-2 border-brand-blue flex items-center justify-center text-brand-blue font-bold"
+                    >
+                      U
+                    </div>
+                    <div>
+                      <div class="font-semibold">User</div>
+                      <div class="text-muted text-sm">Border variant</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="avatar avatar-md overflow-hidden">
+                      <div class="w-full h-full bg-indigo flex items-center justify-center text-white font-bold">
+                        👤
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-semibold">Avatar</div>
+                      <div class="text-muted text-sm">Icon content</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Avatar Groups -->
+          <div class="content-card">
+            <h3 class="h3 mb-6">Avatar Groups</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="h4 mb-3">Team Members</h4>
+                <div class="flex -space-x-2">
+                  <div
+                    class="avatar avatar-md bg-brand-blue border-2 border-white flex items-center justify-center text-white font-bold relative z-10"
+                  >
+                    A
+                  </div>
+                  <div
+                    class="avatar avatar-md bg-brand-green border-2 border-white flex items-center justify-center text-white font-bold relative z-9"
+                  >
+                    B
+                  </div>
+                  <div
+                    class="avatar avatar-md bg-brand-red border-2 border-white flex items-center justify-center text-white font-bold relative z-8"
+                  >
+                    C
+                  </div>
+                  <div
+                    class="avatar avatar-md bg-purple border-2 border-white flex items-center justify-center text-white font-bold relative z-7"
+                  >
+                    D
+                  </div>
+                  <div
+                    class="avatar avatar-md bg-surface-muted border-2 border-white flex items-center justify-center text-muted font-bold relative z-6"
+                  >
+                    +5
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="h4 mb-3">Online Status</h4>
+                <div class="flex items-center gap-4">
+                  <div class="relative">
+                    <div class="avatar avatar-lg bg-brand-blue flex items-center justify-center text-white font-bold">
+                      JD
+                    </div>
+                    <div
+                      class="absolute -bottom-1 -right-1 w-4 h-4 bg-success border-2 border-white rounded-full"
+                    ></div>
+                  </div>
+                  <div class="relative">
+                    <div class="avatar avatar-lg bg-brand-green flex items-center justify-center text-white font-bold">
+                      SM
+                    </div>
+                    <div
+                      class="absolute -bottom-1 -right-1 w-4 h-4 bg-warning border-2 border-white rounded-full"
+                    ></div>
+                  </div>
+                  <div class="relative">
+                    <div class="avatar avatar-lg bg-brand-red flex items-center justify-center text-white font-bold">
+                      AB
+                    </div>
+                    <div
+                      class="absolute -bottom-1 -right-1 w-4 h-4 bg-gray-400 border-2 border-white rounded-full"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography Components -->
+      <section id="typography" class="component-section py-24 bg-surface">
+        <div class="container">
+          <div class="text-center mb-16">
+            <h2 class="h2 text-primary mb-4">Typography System</h2>
+            <p class="p2 text-secondary max-w-2xl mx-auto">
+              Comprehensive typography scale with semantic classes and consistent spacing
+            </p>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Heading Hierarchy</h3>
+            <div class="space-y-6">
+              <div class="flex items-baseline gap-6">
+                <span class="mono-body text-muted text-sm w-16">.h1</span>
+                <h1 class="h1 flex-1">Main Page Heading</h1>
+              </div>
+              <div class="flex items-baseline gap-6">
+                <span class="mono-body text-muted text-sm w-16">.h2</span>
+                <h2 class="h2 flex-1">Section Heading</h2>
+              </div>
+              <div class="flex items-baseline gap-6">
+                <span class="mono-body text-muted text-sm w-16">.h3</span>
+                <h3 class="h3 flex-1">Subsection Heading</h3>
+              </div>
+              <div class="flex items-baseline gap-6">
+                <span class="mono-body text-muted text-sm w-16">.h4</span>
+                <h4 class="h4 flex-1">Component Heading</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Body Text Variants</h3>
+            <div class="space-y-6">
+              <div class="flex items-start gap-6">
+                <span class="mono-body text-muted text-sm w-16">.p1</span>
+                <p class="p1 flex-1">
+                  Large paragraph text for important introductions, descriptions, and prominent content areas. This size
+                  works well for hero sections and key messaging.
+                </p>
+              </div>
+              <div class="flex items-start gap-6">
+                <span class="mono-body text-muted text-sm w-16">.p2</span>
+                <p class="p2 flex-1">
+                  Standard paragraph text for regular body content, articles, and general information. This is the most
+                  commonly used text size for readable content.
+                </p>
+              </div>
+              <div class="flex items-start gap-6">
+                <span class="mono-body text-muted text-sm w-16">.testimonial</span>
+                <p class="testimonial flex-1">
+                  "Special testimonial text for quotes, featured content, and emphasized statements that need to stand
+                  out from regular body text."
+                </p>
+              </div>
+              <div class="flex items-start gap-6">
+                <span class="mono-body text-muted text-sm w-16">.caption</span>
+                <p class="caption flex-1">CAPTION TEXT FOR LABELS, METADATA, AND SMALL DESCRIPTIVE CONTENT</p>
+              </div>
+              <div class="flex items-start gap-6">
+                <span class="mono-body text-muted text-sm w-16">.mono-body</span>
+                <p class="mono-body flex-1">Monospace text for code examples, technical content, and data display</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h3 class="h3 mb-6">Text Color Hierarchy</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="h4 mb-4">Text Colors</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-primary p2">Primary Text</span>
+                    <span class="mono-body text-muted text-sm">.text-primary</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-secondary p2">Secondary Text</span>
+                    <span class="mono-body text-muted text-sm">.text-secondary</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-muted p2">Muted Text</span>
+                    <span class="mono-body text-muted text-sm">.text-muted</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-subtle p2">Subtle Text</span>
+                    <span class="mono-body text-muted text-sm">.text-subtle</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-disabled p2">Disabled Text</span>
+                    <span class="mono-body text-muted text-sm">.text-disabled</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 class="h4 mb-4">Semantic Colors</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-success p2">Success Message</span>
+                    <span class="mono-body text-muted text-sm">.text-success</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-warning p2">Warning Message</span>
+                    <span class="mono-body text-muted text-sm">.text-warning</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-error p2">Error Message</span>
+                    <span class="mono-body text-muted text-sm">.text-error</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-info p2">Info Message</span>
+                    <span class="mono-body text-muted text-sm">.text-info</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-brand-primary p2">Brand Primary</span>
+                    <span class="mono-body text-muted text-sm">.text-brand-primary</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card Components -->
+      <section id="cards" class="component-section py-24">
+        <div class="container">
+          <div class="text-center mb-16">
+            <h2 class="h2 text-primary mb-4">Card Components</h2>
+            <p class="p2 text-secondary max-w-2xl mx-auto">
+              Flexible card layouts for content display, features, and user interactions
+            </p>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Feature Cards</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <a href="#" class="feature-card">
+                <div
+                  class="feature-card-image bg-gradient-rainbow flex items-center justify-center text-white font-bold text-2xl"
+                >
+                  🎨
+                </div>
+                <h4 class="feature-card-title">Design System</h4>
+                <p class="feature-card-description">
+                  Complete design system with tokens, components, and guidelines for consistent user experiences.
+                </p>
+                <div class="feature-card-footer">
+                  <div class="feature-card-author">
+                    <div
+                      class="avatar avatar-sm bg-brand-blue flex items-center justify-center text-white text-xs font-bold"
+                    >
+                      DS
+                    </div>
+                    <span class="feature-card-username">Design Team</span>
+                  </div>
+                  <span class="feature-card-action">Explore →</span>
+                </div>
+              </a>
+
+              <a href="#" class="feature-card">
+                <div
+                  class="feature-card-image bg-brand-surface flex items-center justify-center text-brand-primary font-bold text-2xl"
+                >
+                  ⚡
+                </div>
+                <h4 class="feature-card-title">Performance</h4>
+                <p class="feature-card-description">
+                  Optimized CSS architecture with modern features, efficient animations, and minimal bundle size.
+                </p>
+                <div class="feature-card-footer">
+                  <div class="feature-card-author">
+                    <div
+                      class="avatar avatar-sm bg-brand-green flex items-center justify-center text-white text-xs font-bold"
+                    >
+                      PE
+                    </div>
+                    <span class="feature-card-username">Performance</span>
+                  </div>
+                  <span class="feature-card-action">Learn →</span>
+                </div>
+              </a>
+
+              <a href="#" class="feature-card">
+                <div
+                  class="feature-card-image bg-purple-100 flex items-center justify-center text-purple font-bold text-2xl"
+                >
+                  ♿
+                </div>
+                <h4 class="feature-card-title">Accessibility</h4>
+                <p class="feature-card-description">
+                  Built with accessibility best practices, focus management, and semantic HTML structures.
+                </p>
+                <div class="feature-card-footer">
+                  <div class="feature-card-author">
+                    <div
+                      class="avatar avatar-sm bg-purple flex items-center justify-center text-white text-xs font-bold"
+                    >
+                      A11Y
+                    </div>
+                    <span class="feature-card-username">Accessibility</span>
+                  </div>
+                  <span class="feature-card-action">View →</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h3 class="h3 mb-6">Content Cards</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="content-card">
+                <h4 class="h4 mb-4">Basic Content Card</h4>
+                <p class="p2 text-secondary mb-4">
+                  Simple content cards with consistent padding, borders, and shadows for displaying information.
+                </p>
+                <div class="metadata-section">
+                  <div class="metadata-item">
+                    <span class="metadata-label">Card Type</span>
+                    <span class="metadata-value">Content</span>
+                  </div>
+                  <div class="metadata-item">
+                    <span class="metadata-label">Border Radius</span>
+                    <span class="metadata-value">16px</span>
+                  </div>
+                  <div class="metadata-item border-b-0">
+                    <span class="metadata-label">Padding</span>
+                    <span class="metadata-value">16px</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-card">
+                <h4 class="h4 mb-4">Interactive Card</h4>
+                <p class="p2 text-secondary mb-4">
+                  Cards can include interactive elements like buttons, links, and form controls.
+                </p>
+                <div class="flex gap-3 mb-4">
+                  <button class="btn btn-cta btn-sm">Primary Action</button>
+                  <button class="btn btn-outline btn-sm text-brand-blue">Secondary</button>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tag tag-primary tag-sm">Interactive</span>
+                  <span class="tag tag-success tag-sm">Responsive</span>
+                  <span class="tag tag-neutral tag-sm">Accessible</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form Components -->
+      <section id="forms" class="component-section py-24 bg-surface">
+        <div class="container">
+          <div class="text-center mb-16">
+            <h2 class="h2 text-primary mb-4">Form Components</h2>
+            <p class="p2 text-secondary max-w-2xl mx-auto">
+              Form elements with consistent styling, focus states, and validation feedback
+            </p>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Input Elements</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-4">
+                <div>
+                  <label class="block p2 font-medium text-primary mb-2">Default Input</label>
+                  <input
+                    type="text"
+                    placeholder="Enter text here..."
+                    class="w-full px-4 py-3 border border-default rounded-lg focus:border-brand-primary focus:ring-2 focus:ring-focus-ring transition-colors"
+                  />
+                </div>
+                <div>
+                  <label class="block p2 font-medium text-primary mb-2">Email Input</label>
+                  <input
+                    type="email"
+                    placeholder="email@example.com"
+                    class="w-full px-4 py-3 border border-default rounded-lg focus:border-brand-primary focus:ring-2 focus:ring-focus-ring transition-colors"
+                  />
+                </div>
+                <div>
+                  <label class="block p2 font-medium text-primary mb-2">Password Input</label>
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    class="w-full px-4 py-3 border border-default rounded-lg focus:border-brand-primary focus:ring-2 focus:ring-focus-ring transition-colors"
+                  />
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <label class="block p2 font-medium text-primary mb-2">Textarea</label>
+                  <textarea
+                    rows="4"
+                    placeholder="Enter your message..."
+                    class="w-full px-4 py-3 border border-default rounded-lg focus:border-brand-primary focus:ring-2 focus:ring-focus-ring transition-colors resize-none"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block p2 font-medium text-primary mb-2">Select Dropdown</label>
+                  <select
+                    class="w-full px-4 py-3 border border-default rounded-lg focus:border-brand-primary focus:ring-2 focus:ring-focus-ring transition-colors"
+                  >
+                    <option>Choose an option...</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h3 class="h3 mb-6">Form States & Validation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="space-y-4">
+                <div>
+                  <label class="block p2 font-medium text-success mb-2">Valid Input</label>
+                  <input
+                    type="text"
+                    value="Valid input"
+                    class="w-full px-4 py-3 border border-success rounded-lg focus:border-success focus:ring-2 focus:ring-success/20 transition-colors"
+                  />
+                  <p class="text-success text-sm mt-1">✓ This field is valid</p>
+                </div>
+                <div>
+                  <label class="block p2 font-medium text-error mb-2">Error Input</label>
+                  <input
+                    type="text"
+                    value="Invalid input"
+                    class="w-full px-4 py-3 border border-error rounded-lg focus:border-error focus:ring-2 focus:ring-error/20 transition-colors"
+                  />
+                  <p class="text-error text-sm mt-1">⚠ This field has an error</p>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <label class="block p2 font-medium text-muted mb-2">Disabled Input</label>
+                  <input
+                    type="text"
+                    value="Disabled input"
+                    disabled
+                    class="w-full px-4 py-3 border border-light rounded-lg bg-surface-muted text-disabled cursor-not-allowed"
+                  />
+                </div>
+                <div>
+                  <label class="block p2 font-medium text-primary mb-2">Checkbox & Radio</label>
+                  <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        class="w-4 h-4 text-brand-primary border-default rounded-sm focus:ring-2 focus:ring-focus-ring"
+                      />
+                      <span class="p2">Checkbox option</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="radio-group"
+                        class="w-4 h-4 text-brand-primary border-default focus:ring-2 focus:ring-focus-ring"
+                      />
+                      <span class="p2">Radio option 1</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="radio-group"
+                        class="w-4 h-4 text-brand-primary border-default focus:ring-2 focus:ring-focus-ring"
+                      />
+                      <span class="p2">Radio option 2</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Layout Components -->
+      <section id="layouts" class="component-section py-24">
+        <div class="container">
+          <div class="text-center mb-16">
+            <h2 class="h2 text-primary mb-4">Layout Components</h2>
+            <p class="p2 text-secondary max-w-2xl mx-auto">
+              Layout utilities and components for consistent spacing and responsive design
+            </p>
+          </div>
+
+          <div class="content-card mb-12">
+            <h3 class="h3 mb-6">Container & Grid Systems</h3>
+            <div class="space-y-8">
+              <div>
+                <h4 class="h4 mb-4">Container Classes</h4>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div>
+                    <div class="metadata-section">
+                      <div class="metadata-item">
+                        <span class="metadata-label">.container</span>
+                        <span class="metadata-value">Max-width with auto margins</span>
+                      </div>
+                      <div class="metadata-item">
+                        <span class="metadata-label">.safe-area</span>
+                        <span class="metadata-value">Device safe area padding</span>
+                      </div>
+                      <div class="metadata-item border-b-0">
+                        <span class="metadata-label">.max-w-layout</span>
+                        <span class="metadata-value">Layout max-width utility</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold mb-3">Visual Example</h5>
+                    <div class="border-2 border-dashed border-light p-4 rounded-lg">
+                      <div class="bg-brand-surface p-4 rounded-sm text-center">
+                        <span class="mono-body text-sm">.container</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="h4 mb-4">Responsive Grid</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div class="bg-brand-blue text-white p-4 rounded-lg text-center">
+                    <span class="mono-body text-sm">Column 1</span>
+                  </div>
+                  <div class="bg-brand-green text-white p-4 rounded-lg text-center">
+                    <span class="mono-body text-sm">Column 2</span>
+                  </div>
+                  <div class="bg-brand-red text-white p-4 rounded-lg text-center">
+                    <span class="mono-body text-sm">Column 3</span>
+                  </div>
+                  <div class="bg-purple text-white p-4 rounded-lg text-center">
+                    <span class="mono-body text-sm">Column 4</span>
+                  </div>
+                </div>
+                <p class="text-muted text-sm mt-2">Responsive: 1 column on mobile, 2 on tablet, 4 on desktop</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <h3 class="h3 mb-6">Special Layout Features</h3>
+            <div class="space-y-8">
+              <div>
+                <h4 class="h4 mb-4">Gradient Backgrounds</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="gradient-rainbow p-8 rounded-lg text-center">
+                    <span class="mono-body text-white bg-black/20 px-3 py-1 rounded-sm">.gradient-rainbow</span>
+                  </div>
+                  <div class="bg-brand-surface p-8 rounded-lg text-center border border-light">
+                    <span class="mono-body text-brand-primary">.bg-brand-surface</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="h4 mb-4">Hero Section Layout</h4>
+                <div class="hero-section rounded-lg border border-light" style="min-height: 300px">
+                  <div class="hero-content">
+                    <h5 class="hero-title h4 mb-3">Hero Section</h5>
+                    <p class="hero-description p2 mb-4">Centered content with flexible height and responsive design</p>
+                    <div class="hero-cta">
+                      <button class="btn btn-cta btn-sm">Call to Action</button>
+                      <button class="btn btn-outline btn-sm text-brand-blue">Secondary</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Footer -->
-      <footer class="bg-gray-900 text-white py-16 mt-24">
+      <footer class="bg-black text-white py-16 mt-24">
         <div class="container">
           <div class="text-center">
-            <h3 class="text-2xl font-bold mb-4">Design System Components</h3>
-            <p class="text-gray-400 mb-8">
-              A comprehensive showcase of reusable UI components built with Tailwind CSS v4
+            <div class="avatar avatar-xl bg-gradient-rainbow flex items-center justify-center mb-6 mx-auto">
+              <span class="text-white text-2xl font-bold">BC</span>
+            </div>
+            <h3 class="h3 mb-4">Component Library Complete</h3>
+            <p class="p2 text-white-90 mb-8 max-w-2xl mx-auto">
+              You've explored our comprehensive component library. Each component is built with accessibility,
+              performance, and consistency in mind using our design token system.
             </p>
-            <div class="flex justify-center gap-4">
-              <a href="index.html" class="btn bg-white text-gray-900 hover:bg-gray-100"> View Design Tokens </a>
-              <a
-                href="#"
-                class="btn border border-white text-white bg-transparent hover:bg-white hover:text-gray-900"
+
+            <!-- Component Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl mx-auto">
+              <div class="text-center">
+                <div class="h3 text-brand-blue mb-1">50+</div>
+                <div class="caption text-white-90">COMPONENTS</div>
+              </div>
+              <div class="text-center">
+                <div class="h3 text-brand-green mb-1">200+</div>
+                <div class="caption text-white-90">DESIGN TOKENS</div>
+              </div>
+              <div class="text-center">
+                <div class="h3 text-brand-red mb-1">100%</div>
+                <div class="caption text-white-90">ACCESSIBLE</div>
+              </div>
+              <div class="text-center">
+                <div class="h3 text-purple mb-1">v4.0</div>
+                <div class="caption text-white-90">TAILWIND CSS</div>
+              </div>
+            </div>
+
+            <div class="flex justify-center gap-4 mb-8">
+              <a href="index.html" class="btn bg-white text-black hover:bg-white-90">← Back to Design Tokens</a>
+              <button
+                onclick="scrollToTop()"
+                class="btn btn-outline text-white border-white hover:bg-white hover:text-black"
               >
-                Download System
-              </a>
+                ↑ Back to Top
+              </button>
+            </div>
+
+            <!-- Quick Component Tags -->
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="tag tag-primary tag-sm">Buttons</span>
+              <span class="tag tag-success tag-sm">Tags</span>
+              <span class="tag tag-warning tag-sm">Avatars</span>
+              <span class="tag tag-error tag-sm">Typography</span>
+              <span class="tag tag-purple tag-sm">Cards</span>
+              <span class="tag tag-neutral tag-sm">Forms</span>
+              <span class="tag tag-outline tag-sm">Layouts</span>
             </div>
           </div>
         </div>
       </footer>
     </main>
 
-    <!-- JavaScript to load components -->
+    <!-- Interactive JavaScript -->
     <script>
-      // Simple component loader
-      async function loadComponent(elementId, componentPath) {
-        try {
-          const response = await fetch(componentPath);
-          const html = await response.text();
-          document.getElementById(elementId).innerHTML = html;
-        } catch (error) {
-          console.error(`Error loading component ${componentPath}:`, error);
+      // Scroll to section function
+      function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
         }
       }
 
-      // Load all components
+      // Scroll to top function
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
+
       document.addEventListener('DOMContentLoaded', function () {
-        loadComponent('header-component', './components/header.html');
-        loadComponent('hero-sections', './components/hero-sections.html');
-        loadComponent('button-components', './components/buttons.html');
-        loadComponent('typography-components', './components/typography.html');
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            scrollToSection(targetId);
+          });
+        });
+
+        // Interactive button demonstrations
+        document.querySelectorAll('.btn:not([disabled])').forEach(button => {
+          button.addEventListener('click', function (e) {
+            // Prevent default for demo buttons
+            if (!this.href && this.tagName === 'BUTTON') {
+              e.preventDefault();
+
+              // Add click feedback
+              const original = this.textContent;
+              this.style.transform = 'scale(0.95)';
+
+              setTimeout(() => {
+                this.style.transform = '';
+              }, 100);
+            }
+          });
+        });
+
+        // Copy functionality for metadata values
+        document.querySelectorAll('.metadata-value').forEach(element => {
+          element.style.cursor = 'pointer';
+          element.title = 'Click to copy';
+
+          element.addEventListener('click', function () {
+            navigator.clipboard.writeText(this.textContent).then(() => {
+              const original = this.textContent;
+              this.textContent = 'Copied!';
+              this.style.color = 'var(--color-success)';
+
+              setTimeout(() => {
+                this.textContent = original;
+                this.style.color = '';
+              }, 1500);
+            });
+          });
+        });
+
+        // Enhanced hover effects for feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+          card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-6px) scale(1.02)';
+            this.style.boxShadow = '0 40px 80px rgba(0, 0, 0, 0.15)';
+          });
+
+          card.addEventListener('mouseleave', function () {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+          });
+        });
+
+        // Tag interaction demos
+        document.querySelectorAll('.tag').forEach(tag => {
+          if (tag.textContent.includes('Clickable') || tag.textContent.includes('Hover')) {
+            tag.addEventListener('click', function () {
+              const colors = ['tag-primary', 'tag-success', 'tag-warning', 'tag-error', 'tag-purple'];
+              const currentClasses = Array.from(this.classList).filter(c => colors.includes(c));
+              const currentColorIndex = colors.findIndex(c => currentClasses.includes(c));
+              const nextColorIndex = (currentColorIndex + 1) % colors.length;
+
+              // Remove current color class and add next one
+              currentClasses.forEach(c => this.classList.remove(c));
+              this.classList.add(colors[nextColorIndex]);
+            });
+          }
+        });
+
+        // Form interaction enhancements
+        document.querySelectorAll('input, textarea, select').forEach(input => {
+          input.addEventListener('focus', function () {
+            this.parentElement.style.transform = 'translateY(-1px)';
+          });
+
+          input.addEventListener('blur', function () {
+            this.parentElement.style.transform = '';
+          });
+        });
+
+        // Progressive section reveal on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px',
+        };
+
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, observerOptions);
+
+        // Observe all component sections
+        document.querySelectorAll('.component-section').forEach(section => {
+          section.style.opacity = '0';
+          section.style.transform = 'translateY(20px)';
+          section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(section);
+        });
       });
     </script>
   </body>
-</html>
 </html>

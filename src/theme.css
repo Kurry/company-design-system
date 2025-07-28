@@ -1,0 +1,132 @@
+@theme {
+  --*: initial;
+
+  --color-black: #000000;
+  --color-white: #fff;
+  --color-red: #fb3a4d;
+  --color-blue: #3139fb;
+  --color-yellow: #fc0;
+  --color-green: #34c759;
+  --color-purple: #5d2de6;
+  --color-black-90: rgb(0 0 0 / 90%);
+  --color-black-80: rgb(0 0 0 / 80%);
+  --color-black-64: rgb(0 0 0 / 64%);
+  --color-black-50: rgb(0 0 0 / 50%);
+  --color-black-30: rgb(0 0 0 / 30%);
+  --color-black-15: rgb(0 0 0 / 15%);
+  --color-black-10: rgb(0 0 0 / 10%);
+  --color-black-5: rgb(0 0 0 / 5%);
+  --color-white-true: #fff;
+  --color-white-90: rgb(255 255 255 / 90%);
+  --color-white-50: rgb(255 255 255 / 50%);
+  --color-primary: #3139fb;
+  --color-error: #fb3a4d;
+  --color-brand-primary: #3139fb;
+  --color-brand-primary-dark: #2404aa;
+  --color-brand-primary-darker: #000354;
+  --color-brand-secondary: #0047ff;
+  --color-brand-accent: #2702c2;
+  --color-brand-danger: #fb3a4d;
+  --color-brand-danger-alt: #f33;
+  --color-brand-warning: #fb3aa2;
+  --color-brand-surface: #fffcec;
+  --color-brand-surface-alt: #fffcea;
+  --color-brand-blue: #3139fb;
+  --color-brand-red: #fb3a4d;
+  --color-brand-green: #34c759;
+  --color-brand-cream: #fffcec;
+  --color-focus: #96c4ff;
+  --color-focus-ring: color-mix(in oklch, var(--color-brand-primary) 20%, transparent);
+  --color-success: #34c759;
+  --color-success-light: color-mix(in oklch, var(--color-success) 15%, white);
+  --color-success-dark: color-mix(in oklch, var(--color-success) 20%, black);
+  --color-warning: #fc0;
+  --color-warning-light: color-mix(in oklch, var(--color-warning) 15%, white);
+  --color-warning-dark: color-mix(in oklch, var(--color-warning) 20%, black);
+  --color-purple-50: color-mix(in oklch, #5d2de6 5%, white);
+  --color-purple-100: color-mix(in oklch, #5d2de6 10%, white);
+  --color-purple-200: color-mix(in oklch, #5d2de6 20%, white);
+  --color-purple-300: color-mix(in oklch, #5d2de6 40%, white);
+  --color-purple-400: color-mix(in oklch, #5d2de6 60%, white);
+  --color-purple-500: #5d2de6;
+  --color-purple-600: #4a24b8;
+  --color-purple-700: color-mix(in oklch, #5d2de6 20%, black);
+  --color-purple-800: color-mix(in oklch, #5d2de6 40%, black);
+  --color-purple-900: color-mix(in oklch, #5d2de6 60%, black);
+  --color-purple-950: color-mix(in oklch, #5d2de6 80%, black);
+  --color-pink: #fd02f5;
+  --color-brown: #340b05;
+  --color-neon: #39ff14;
+  --color-orange: #f59e0b;
+  --color-cyan: #06b6d4;
+  --color-indigo: #6366f1;
+  --color-primary-blue: rgb(12 80 255);
+  --color-deep-blue: rgb(36 4 170);
+  --color-dark-blue: rgb(39 2 194);
+  --color-accent-pinkish: rgb(242 94 107);
+  --color-accent-green: rgb(211 224 129);
+  --color-accent-salmon: rgb(242 194 172);
+  --color-neutral-offwhite: rgb(245 244 226);
+  --color-surface: #f8f8f8;
+  --color-surface-elevated: #fff;
+  --color-surface-overlay: rgb(255 255 255 / 90%);
+  --color-surface-muted: rgb(0 0 0 / 5%);
+  --color-text-primary: rgb(0 0 0 / 90%);
+  --color-text-secondary: rgb(0 0 0 / 70%);
+  --color-text-muted: rgb(0 0 0 / 50%);
+  --color-text-subtle: rgb(0 0 0 / 40%);
+  --color-text-disabled: rgb(0 0 0 / 30%);
+  --color-text-success: #34c759;
+  --color-text-warning: #fc0;
+  --color-text-error: #fb3a4d;
+  --color-text-info: #3139fb;
+  --color-border-light: rgb(0 0 0 / 10%);
+  --color-border-default: rgb(0 0 0 / 15%);
+  --color-border-medium: rgb(0 0 0 / 30%);
+  --color-border-strong: rgb(0 0 0 / 50%);
+  --color-fill-primary: #3139fb;
+  --color-fill-secondary: #5d2de6;
+  --color-fill-tertiary: rgb(0 0 0 / 5%);
+  --font-family-sans:
+    marlin, -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-body:
+    'InterVariable', 'Inter', -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono:
+    abc favorit mono, menlo, monaco, lucida console, liberation mono, dejavu sans mono, bitstream vera sans mono,
+    courier new, monospace;
+  --font-family-soft-sans:
+    marlin soft sq, -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-size-10: 10px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+  --font-size-48: 48px;
+  --line-height-12: 12px;
+  --line-height-16: 16px;
+  --line-height-20: 20px;
+  --line-height-24: 24px;
+  --line-height-32: 32px;
+  --line-height-40: 40px;
+  --line-height-48: 48px;
+  --line-height-56: 56px;
+  --layout-padding: 32px;
+  --layout-page-padding-left: max(env(safe-area-inset-left), var(--layout-padding));
+  --layout-page-padding-right: max(env(safe-area-inset-right), var(--layout-padding));
+  --layout-max-width: 1280px;
+  --layout-navbar-height: 64px;
+  --layout-mobile-cta-height: 56px;
+  --motion-duration-marquee: 3000ms;
+  --motion-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --gradient-conic-rainbow: conic-gradient(
+    from 180deg at 50% 50%,
+    rgb(140 172 255) 0deg,
+    rgb(240 180 255) 108deg,
+    rgb(255 255 255) 196.2deg,
+    rgb(255 137 179) 313.2deg,
+    rgb(140 172 255) 360deg
+  );
+}
