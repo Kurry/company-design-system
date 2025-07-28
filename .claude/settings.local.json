@@ -14,7 +14,12 @@
       "Bash(ls:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
-      "Bash(npm run format:*)"
+      "Bash(npm run format:*)",
+      "Bash(find:*)",
+      "Bash(npm run lint:*)",
+      "Bash(git rm:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh repo edit:*)"
     ],
     "deny": []
   }

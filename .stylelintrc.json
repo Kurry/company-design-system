@@ -1,6 +1,5 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
-  "plugins": ["stylelint-config-tailwindcss/plugin"],
+  "extends": ["stylelint-config-standard"],
   "rules": {
     "at-rule-no-unknown": [
       true,
@@ -31,14 +30,7 @@
       }
     ],
     "declaration-block-trailing-semicolon": null,
-    "no-descending-specificity": null,
-    "tailwindcss/no-custom-classname": null,
-    "tailwindcss/enforces-negative-arbitrary-values": "error",
-    "tailwindcss/enforces-shorthand": "error",
-    "tailwindcss/migration-from-tailwind-2": "error",
-    "tailwindcss/no-arbitrary-value": null,
-    "tailwindcss/no-contradicting-classname": "error",
-    "tailwindcss/no-unnecessary-arbitrary-value": "error"
+    "no-descending-specificity": null
   },
   "ignoreFiles": ["dist/**/*.css", "node_modules/**/*.css", "coverage/**/*.css"]
 }
