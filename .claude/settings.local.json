@@ -4,7 +4,14 @@
       "Bash(rm:*)",
       "Bash(npm run clean:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git remote add:*)",
+      "Bash(gh api:*)",
+      "Bash(cp:*)",
+      "Bash(npm run build:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }
