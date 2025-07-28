@@ -1,36 +1,40 @@
-# The Browser Company Design System
+# Company Design System
 
-**🎨 A comprehensive design system extracted from The Browser Company's website and implemented with Tailwind CSS v4**
+**⚠️ Internal Implementation - Not for Public Distribution**
 
-[![Version](https://img.shields.io/npm/v/@browser-company/design-system.svg)](https://www.npmjs.com/package/@browser-company/design-system)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+This repository contains an internal design system implementation built with Tailwind CSS v4. This is a private tool for internal company use only.
 
-## 🚀 Quick Start
+## 🚨 Important Notice
+
+This design system is:
+- **Internal use only** - Not intended for open source distribution
+- **Company proprietary** - Contains design patterns and tokens for internal projects
+- **Reference implementation** - Extracted and adapted for internal development workflows
+
+## 🚀 Development Setup
 
 ### Installation
 
 ```bash
-npm install @browser-company/design-system
+# Clone the repository (internal access required)
+git clone https://github.com/Kurry/company-design-system.git
+cd company-design-system
+
+# Install dependencies
+npm install
 ```
 
 ### Usage
 
-```html
-<!-- Import the compiled CSS -->
-<link
-  rel="stylesheet"
-  href="node_modules/@browser-company/design-system/dist/browser-company.css"
-/>
-```
+```bash
+# Development build with watch
+npm run dev
 
-```css
-/* Or import in your CSS */
-@import '@browser-company/design-system';
-```
+# Production build
+npm run build
 
-```javascript
-// Import design tokens
-import tokens from '@browser-company/design-system/tokens';
+# Preview documentation
+npm run preview
 ```
 
 ## 🎯 What's Included
@@ -38,215 +42,91 @@ import tokens from '@browser-company/design-system/tokens';
 ### **📁 File Structure**
 
 ```
-browser-company-design-system/
+company-design-system/
 ├── src/
-│   └── input.css                    # Tailwind v4 source
+│   └── input.css                    # Design system source
 ├── dist/
-│   └── browser-company.css          # Compiled CSS
-├── browser-company-tokens.json      # Design tokens
-├── BROWSER_COMPANY_ANALYSIS.md      # Comprehensive analysis
+│   └── browser-company.css          # Compiled CSS output
+├── preview/                         # Internal documentation site
+├── design-system-tokens.json       # Design tokens
+├── CLAUDE.md                        # Development guidelines
 └── README.md                        # This file
 ```
 
-### **🎨 Design Tokens (200+ tokens)**
+### **🎨 Design Tokens**
 
-- **60+ Colors**: 12-step scales, brand colors, opacity variants
-- **40+ Typography**: Custom fonts, sizes, weights, spacing
-- **25+ Spacing**: 4px-based scale, layout constants
-- **35+ Effects**: Shadows, animations, z-index, blur
+- **Colors**: Brand colors, purple/blue systems, neutrals, accent colors
+- **Typography**: Custom fonts (Marlin, Inter, ABC Favorit Mono), sizes, weights
+- **Layout**: 4px-based spacing scale, container widths, layout constants
+- **Effects**: Shadows, border radius, animations, z-index layers
 
-### **🧩 Ready-to-Use Components**
+### **🧩 Component System**
 
-#### Buttons
+The design system includes pre-built components:
 
-```html
-<button class="btn-browser-primary">Primary Button</button>
-<button class="btn-browser-secondary">Secondary Button</button>
-<button class="btn-browser-outline">Outline Button</button>
-```
+- **Buttons**: `.btn` with variants (primary, secondary, purple, danger)
+- **Navigation**: `.nav-link` with hover effects  
+- **Cards**: `.card` with optional hover animations
+- **Forms**: `.input` with focus states and error variants
+- **Badges**: `.badge` with semantic color variants
+- **Layout**: `.container`, `.safe-area`, responsive utilities
 
-#### Cards
+## 📖 Documentation
 
-```html
-<div class="card-browser">
-  <h3>Standard Card</h3>
-  <p>Card content here</p>
-</div>
+Internal documentation and component showcase: **[Preview Site](https://kurry.github.io/company-design-system/)**
 
-<div class="card-browser-elevated">
-  <h3>Elevated Card</h3>
-  <p>Card with enhanced shadow</p>
-</div>
-```
+## 🛠️ Technical Details
 
-#### Typography
+- **Tailwind CSS v4** with `@theme` directive
+- **CSS custom properties** for design tokens  
+- **Performance-optimized** animations with GPU acceleration
+- **4px spacing scale** for consistent layout
+- **Accessibility** features with focus indicators
 
-```html
-<h1 class="heading-browser-1">Main Heading</h1>
-<h2 class="heading-browser-2">Section Heading</h2>
-<h3 class="heading-browser-3">Subsection Heading</h3>
-<p class="text-browser-body">Body text with optimal readability</p>
-<p class="text-browser-small">Small supporting text</p>
-<code class="text-browser-mono">Monospace code text</code>
-```
-
-#### Forms
-
-```html
-<input type="text" class="input-browser" placeholder="Enter text..." />
-```
-
-#### Layout
-
-```html
-<div class="container-browser">
-  <section class="section-browser">
-    <!-- Content -->
-  </section>
-</div>
-```
-
-### **⚡ Custom Utilities**
-
-```html
-<!-- Animations -->
-<div class="animate-browser-pulse">Pulsing element</div>
-<div class="animate-slide">Sliding element</div>
-
-<!-- Effects -->
-<div class="gradient-browser-rainbow">Rainbow gradient</div>
-<div class="blur-browser-md">Blurred element</div>
-
-<!-- Transforms -->
-<button class="transform-button-hover">Hover transform</button>
-```
-
-## 🎨 Color System
-
-This design system uses a sophisticated **12-step color scale**:
-
-### Primary Colors (Red-Orange)
-
-```css
---color-primary-1: rgb(255, 234, 231) /* Lightest */ --color-primary-6: rgb(250, 69, 49) /* Base */
-  --color-primary-12: rgb(9, 2, 1) /* Darkest */;
-```
-
-### Secondary Colors (Teal-Cyan)
-
-```css
---color-secondary-1: rgb(0, 234, 231) /* Lightest */ --color-secondary-6: rgb(0, 69, 49) /* Base */
-  --color-secondary-12: rgb(0, 2, 1) /* Darkest */;
-```
-
-### Brand Colors
-
-```css
---color-brand-blue: #3139fb /* Primary brand */ --color-purple: #5d2de6 /* Secondary brand */
-  --color-brand-red: #fb3a4d /* Accent */ --color-focus-outline: #96c4ff /* Focus states */;
-```
-
-## 🔤 Typography
-
-### Font Families
-
-- **Marlin**: Primary brand font
-- **Inter/InterVariable**: Body text for readability
-- **ABC Favorit Mono**: Monospace/code text
-
-### Font Scale
-
-```css
---font-size-10: 10px --font-size-12: 12px --font-size-14: 14px --font-size-16: 16px
-  --font-size-20: 20px --font-size-24: 24px --font-size-32: 32px --font-size-36: 36px
-  --font-size-40: 40px --font-size-48: 48px;
-```
-
-## 📏 Spacing System
-
-Based on **4px increments** for consistent spacing:
-
-```css
---spacing-4: 4px --spacing-8: 8px --spacing-12: 12px --spacing-16: 16px --spacing-24: 24px
-  --spacing-32: 32px --spacing-40: 40px --spacing-48: 48px --spacing-56: 56px --spacing-64: 64px
-  --spacing-72: 72px;
-```
-
-## ⚡ Animations
-
-Performance-optimized animations with GPU acceleration:
-
-```css
-/* Durations */
---duration-fast: 0.1s --duration-quick: 0.15s --duration-normal: 0.2s /* Easing */
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1) --ease-pulse: cubic-bezier(0.4, 0, 0.6, 1);
-```
-
-## 🏗️ Development
-
-### Build Commands
+## 🛠️ Build Commands
 
 ```bash
-# Development build
-npm run build
-
-# Watch mode for development
+# Development build and watch mode
 npm run dev
+npm run build:watch
 
-# Production build (minified)
+# Production builds  
+npm run build
 npm run build:minify
+
+# Preview documentation
+npm run preview
+
+# Linting and code quality
+npm run lint
+npm run lint:fix
 
 # Clean build artifacts
 npm run clean
 ```
 
-### Using Design Tokens
+## 📋 Usage Guidelines
 
-Access the complete token reference:
+This design system is intended for **internal company projects only**. 
 
-```javascript
-import tokens from '@browser-company/design-system/tokens';
+### Design Token Access
 
-// Access specific token categories
-const { colors, typography, spacing, animations } = tokens;
-
-// Use in JavaScript
-document.documentElement.style.setProperty('--custom-color', colors.brand.brandBlue);
+```css
+/* CSS custom properties */
+color: var(--color-brand-blue);
+background: var(--gradient-conic-rainbow);
 ```
 
-## 📖 Documentation
+```javascript
+// JSON import for build tools
+import tokens from './design-system-tokens.json';
+const primaryColor = tokens.colors.brand.blue;
+```
 
-- **[BROWSER_COMPANY_ANALYSIS.md](./BROWSER_COMPANY_ANALYSIS.md)** - Comprehensive design system analysis
-- **[browser-company-tokens.json](./browser-company-tokens.json)** - Complete design token reference
+## 🔒 Access & Support
 
-## 🎯 Key Features
-
-✅ **Tailwind CSS v4** - Latest framework with `@theme` directive  
-✅ **200+ Design Tokens** - Comprehensive token system  
-✅ **Custom Components** - Ready-to-use Browser Company styled components  
-✅ **Performance Optimized** - GPU-accelerated animations  
-✅ **Accessibility** - Focus indicators and contrast considerations  
-✅ **TypeScript Ready** - Full type definitions included
-
-## 🤝 Contributing
-
-This design system is extracted from a company's public website. To contribute:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Credits
-
-Design tokens and components extracted from a company website.
-Implementation by the design system community.
+This is an internal tool for company development workflows. For questions about usage or implementation, refer to the internal development team.
 
 ---
 
-**Made with ❤️ for the design system community**
+*Internal company design system - Not for public distribution*
