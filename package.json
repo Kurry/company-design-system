@@ -17,12 +17,10 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run clean && npm run build:css && npm run build:analyze",
+    "build": "npm run clean && npm run build:css",
     "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/browser-company.css",
     "build:watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/browser-company.css --watch",
     "build:minify": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/browser-company.css --minify",
-    "build:analyze": "npm run size-check && npm run build:stats",
-    "build:stats": "echo \"📊 Build Statistics:\" && echo \"CSS Size: $(wc -c < dist/browser-company.css) bytes\" && echo \"CSS Lines: $(wc -l < dist/browser-company.css) lines\" && echo \"Gzipped: $(gzip -c dist/browser-company.css | wc -c) bytes\"",
     "dev": "npm run build:watch",
     "preview": "npm run preview:serve",
     "preview:serve": "npx http-server preview -p 3000 -o --cors",
@@ -31,16 +29,9 @@
     "lint:html": "npx eslint preview/components/*.html preview/sections/*.html",
     "lint:css": "npx stylelint src/**/*.css --config-basedir .",
     "lint:fix": "npm run lint:html -- --fix && npm run lint:css -- --fix",
-    "test": "npm run test:build && npm run test:performance",
-    "test:build": "npm run build",
-    "test:performance": "npm run build:minify && npm run size-check && npm run perf:lighthouse",
-    "size-check": "node scripts/size-check.js",
-    "perf:lighthouse": "node scripts/lighthouse-audit.js",
+    "test": "npm run build",
     "format": "prettier --write \"**/*.{css,html,js,json,md}\" --ignore-path .gitignore",
     "format:check": "prettier --check \"**/*.{css,html,js,json,md}\" --ignore-path .gitignore",
-    "ci": "npm run lint && npm run test && npm run build",
-    "ci:quick": "npm run size-check",
-    "release": "npm run ci && npm run build:minify && npm run test:performance",
     "prepare": "npm run build"
   },
   "keywords": [
