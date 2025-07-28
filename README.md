@@ -17,7 +17,10 @@ npm install @browser-company/design-system
 
 ```html
 <!-- Import the compiled CSS -->
-<link rel="stylesheet" href="node_modules/@browser-company/design-system/dist/browser-company.css">
+<link
+  rel="stylesheet"
+  href="node_modules/@browser-company/design-system/dist/browser-company.css"
+/>
 ```
 
 ```css
@@ -33,6 +36,7 @@ import tokens from '@browser-company/design-system/tokens';
 ## 🎯 What's Included
 
 ### **📁 File Structure**
+
 ```
 browser-company-design-system/
 ├── src/
@@ -54,6 +58,7 @@ browser-company-design-system/
 ### **🧩 Ready-to-Use Components**
 
 #### Buttons
+
 ```html
 <button class="btn-browser-primary">Primary Button</button>
 <button class="btn-browser-secondary">Secondary Button</button>
@@ -61,6 +66,7 @@ browser-company-design-system/
 ```
 
 #### Cards
+
 ```html
 <div class="card-browser">
   <h3>Standard Card</h3>
@@ -74,6 +80,7 @@ browser-company-design-system/
 ```
 
 #### Typography
+
 ```html
 <h1 class="heading-browser-1">Main Heading</h1>
 <h2 class="heading-browser-2">Section Heading</h2>
@@ -84,11 +91,13 @@ browser-company-design-system/
 ```
 
 #### Forms
+
 ```html
-<input type="text" class="input-browser" placeholder="Enter text...">
+<input type="text" class="input-browser" placeholder="Enter text..." />
 ```
 
 #### Layout
+
 ```html
 <div class="container-browser">
   <section class="section-browser">
@@ -117,46 +126,40 @@ browser-company-design-system/
 This design system uses a sophisticated **12-step color scale**:
 
 ### Primary Colors (Red-Orange)
+
 ```css
---color-primary-1: rgb(255, 234, 231)  /* Lightest */
---color-primary-6: rgb(250, 69, 49)    /* Base */
---color-primary-12: rgb(9, 2, 1)       /* Darkest */
+--color-primary-1: rgb(255, 234, 231) /* Lightest */ --color-primary-6: rgb(250, 69, 49) /* Base */
+  --color-primary-12: rgb(9, 2, 1) /* Darkest */;
 ```
 
 ### Secondary Colors (Teal-Cyan)
+
 ```css
---color-secondary-1: rgb(0, 234, 231)  /* Lightest */
---color-secondary-6: rgb(0, 69, 49)    /* Base */
---color-secondary-12: rgb(0, 2, 1)     /* Darkest */
+--color-secondary-1: rgb(0, 234, 231) /* Lightest */ --color-secondary-6: rgb(0, 69, 49) /* Base */
+  --color-secondary-12: rgb(0, 2, 1) /* Darkest */;
 ```
 
 ### Brand Colors
+
 ```css
---color-brand-blue: #3139FB       /* Primary brand */
---color-purple: #5d2de6           /* Secondary brand */
---color-brand-red: #FB3A4D        /* Accent */
---color-focus-outline: #96C4FF    /* Focus states */
+--color-brand-blue: #3139fb /* Primary brand */ --color-purple: #5d2de6 /* Secondary brand */
+  --color-brand-red: #fb3a4d /* Accent */ --color-focus-outline: #96c4ff /* Focus states */;
 ```
 
 ## 🔤 Typography
 
 ### Font Families
+
 - **Marlin**: Primary brand font
 - **Inter/InterVariable**: Body text for readability
 - **ABC Favorit Mono**: Monospace/code text
 
 ### Font Scale
+
 ```css
---font-size-10: 10px
---font-size-12: 12px
---font-size-14: 14px
---font-size-16: 16px
---font-size-20: 20px
---font-size-24: 24px
---font-size-32: 32px
---font-size-36: 36px
---font-size-40: 40px
---font-size-48: 48px
+--font-size-10: 10px --font-size-12: 12px --font-size-14: 14px --font-size-16: 16px
+  --font-size-20: 20px --font-size-24: 24px --font-size-32: 32px --font-size-36: 36px
+  --font-size-40: 40px --font-size-48: 48px;
 ```
 
 ## 📏 Spacing System
@@ -164,17 +167,9 @@ This design system uses a sophisticated **12-step color scale**:
 Based on **4px increments** for consistent spacing:
 
 ```css
---spacing-4: 4px
---spacing-8: 8px
---spacing-12: 12px
---spacing-16: 16px
---spacing-24: 24px
---spacing-32: 32px
---spacing-40: 40px
---spacing-48: 48px
---spacing-56: 56px
---spacing-64: 64px
---spacing-72: 72px
+--spacing-4: 4px --spacing-8: 8px --spacing-12: 12px --spacing-16: 16px --spacing-24: 24px
+  --spacing-32: 32px --spacing-40: 40px --spacing-48: 48px --spacing-56: 56px --spacing-64: 64px
+  --spacing-72: 72px;
 ```
 
 ## ⚡ Animations
@@ -183,13 +178,8 @@ Performance-optimized animations with GPU acceleration:
 
 ```css
 /* Durations */
---duration-fast: 0.1s
---duration-quick: 0.15s
---duration-normal: 0.2s
-
-/* Easing */
---ease-smooth: cubic-bezier(0.4, 0, 0.2, 1)
---ease-pulse: cubic-bezier(0.4, 0, 0.6, 1)
+--duration-fast: 0.1s --duration-quick: 0.15s --duration-normal: 0.2s /* Easing */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1) --ease-pulse: cubic-bezier(0.4, 0, 0.6, 1);
 ```
 
 ## 🏗️ Development
@@ -236,7 +226,7 @@ document.documentElement.style.setProperty('--custom-color', colors.brand.brandB
 ✅ **Custom Components** - Ready-to-use Browser Company styled components  
 ✅ **Performance Optimized** - GPU-accelerated animations  
 ✅ **Accessibility** - Focus indicators and contrast considerations  
-✅ **TypeScript Ready** - Full type definitions included  
+✅ **TypeScript Ready** - Full type definitions included
 
 ## 🤝 Contributing
 

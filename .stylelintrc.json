@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-tailwindcss"
-  ],
-  "plugins": [
-    "stylelint-config-tailwindcss/plugin"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
+  "plugins": ["stylelint-config-tailwindcss/plugin"],
   "rules": {
     "at-rule-no-unknown": [
       true,
@@ -26,20 +21,13 @@
     "property-no-unknown": [
       true,
       {
-        "ignoreProperties": [
-          "/^--/"
-        ]
+        "ignoreProperties": ["/^--/"]
       }
     ],
     "function-no-unknown": [
       true,
       {
-        "ignoreFunctions": [
-          "theme",
-          "screen",
-          "oklch",
-          "color-mix"
-        ]
+        "ignoreFunctions": ["theme", "screen", "oklch", "color-mix"]
       }
     ],
     "declaration-block-trailing-semicolon": null,
@@ -52,9 +40,5 @@
     "tailwindcss/no-contradicting-classname": "error",
     "tailwindcss/no-unnecessary-arbitrary-value": "error"
   },
-  "ignoreFiles": [
-    "dist/**/*.css",
-    "node_modules/**/*.css",
-    "coverage/**/*.css"
-  ]
+  "ignoreFiles": ["dist/**/*.css", "node_modules/**/*.css", "coverage/**/*.css"]
 }

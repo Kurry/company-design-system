@@ -31,6 +31,7 @@ npm run clean
 ## Project Architecture
 
 ### File Structure
+
 ```
 company-design-system/
 ├── src/
@@ -46,6 +47,7 @@ company-design-system/
 ```
 
 ### Key Dependencies
+
 - **@tailwindcss/cli**: Version 4.1.11 (Tailwind CSS v4 with @theme directive)
 - **@html-eslint/eslint-plugin**: HTML linting for preview files
 - **eslint-plugin-better-tailwindcss**: Enhanced Tailwind CSS linting
@@ -53,6 +55,7 @@ company-design-system/
 ## CSS Architecture
 
 ### Design Token System
+
 The design system is built on comprehensive design tokens organized in categories:
 
 - **Colors (60+ tokens)**: Brand colors, purple/blue systems, neutrals, accent colors, opacity variants
@@ -61,6 +64,7 @@ The design system is built on comprehensive design tokens organized in categorie
 - **Effects (35+ tokens)**: Shadows, border radius, animations, z-index layers
 
 ### CSS Organization
+
 The `src/input.css` file follows this structure:
 
 1. **@theme directive**: All design tokens as CSS custom properties
@@ -69,6 +73,7 @@ The `src/input.css` file follows this structure:
 4. **@layer utilities**: Utility classes for colors, typography, layout, animations
 
 ### Component System
+
 Pre-built components include:
 
 - **Buttons**: `.btn` with variants (primary, secondary, purple, danger, pink)
@@ -81,18 +86,21 @@ Pre-built components include:
 ## Development Guidelines
 
 ### Tailwind CSS v4 Features
+
 - Uses the new `@theme` directive for design tokens
 - Custom properties are automatically generated from tokens
 - Compatible with standard Tailwind utility classes
 - Extended with custom component and utility layers
 
 ### Design System Conventions
+
 - **4px spacing scale**: All spacing values are multiples of 4px
 - **12-step color scales**: Similar to Radix UI color system for optimal contrast
 - **Performance-first animations**: Transform-based with GPU acceleration
 - **Consistent naming**: Clear, semantic token names following brand-{color} pattern
 
 ### ESLint Configuration
+
 - Focuses on critical Tailwind CSS issues only
 - Enforces no conflicting/duplicate/deprecated classes
 - Disables formatting rules for large showcase files

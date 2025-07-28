@@ -7,14 +7,16 @@
 ## 🎨 Key Design System Insights
 
 ### **Color Philosophy**
+
 The Company's 12-step color scale, similar to Radix UI's color system:
 
 - **Primary Scale**: Warm red-orange tones (12 steps from light to dark)
-- **Secondary Scale**: Cool teal-cyan tones (12 steps) 
+- **Secondary Scale**: Cool teal-cyan tones (12 steps)
 - **Brand Colors**: Purple as primary brand (#5d2de6), Blue accents (#3139FB)
 - **Student Theme**: Dedicated color palette for educational features
 
 ### **Typography Strategy**
+
 - **Primary Font**: **Marlin** (custom brand font)
 - **Body Font**: **Inter/InterVariable** (high readability)
 - **Mono Font**: **ABC Favorit Mono** (custom monospace)
@@ -22,6 +24,7 @@ The Company's 12-step color scale, similar to Radix UI's color system:
 - **Negative Letter Spacing**: Tighter text rendering (-0.5px to -0.14px)
 
 ### **Spacing System**
+
 - **Base Unit**: 4px increments (4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72)
 - **Layout Constants**: 32px padding, 1280px max-width, 64px navbar height
 - **Responsive Containers**: Standard breakpoints (640px, 768px, 1024px, 1280px, 1536px)
@@ -29,10 +32,11 @@ The Company's 12-step color scale, similar to Radix UI's color system:
 ## 🏗️ Technical Architecture
 
 ### **Design Token Structure**
+
 ```
 Colors (60+ tokens)
 ├── Primary Scale (12 steps)
-├── Secondary Scale (12 steps)  
+├── Secondary Scale (12 steps)
 ├── Brand Colors (8 core)
 ├── Purple Variants (6 opacity levels)
 ├── Student Theme (14 colors)
@@ -60,6 +64,7 @@ Effects (35+ tokens)
 ```
 
 ### **CSS Architecture**
+
 - **Framework**: Tailwind CSS v4 with custom extensions
 - **Custom Properties**: Extensive use of CSS variables
 - **Component System**: CSS-in-JS with generated class names
@@ -69,18 +74,21 @@ Effects (35+ tokens)
 ## 🎯 Design Patterns
 
 ### **Interaction Design**
+
 - **Button States**: Scale transforms (0.98x press, 1.02x hover)
 - **Focus Rings**: Blue outline (#96C4FF) with 2px width
 - **Transitions**: Consistent 0.15s ease-out timing
 - **Hover Effects**: Subtle elevation and color shifts
 
 ### **Visual Hierarchy**
+
 - **Z-Index System**: -1 to 2147483647 (strategic layering)
 - **Shadow Progression**: Small (5px) → Medium (8px) → Large (30px) blur
 - **Opacity Variants**: 5%, 8%, 10%, 15%, 25%, 30%, 50% for layering
 - **Border Radius**: 2px → 32px scale + full rounded (9999px)
 
 ### **Animation Philosophy**
+
 - **Micro-interactions**: 0.1s-0.2s for immediate feedback
 - **Smooth Easing**: cubic-bezier(0.4, 0, 0.2, 1) for natural motion
 - **Transform-based**: Scale/translate for performance
@@ -89,19 +97,21 @@ Effects (35+ tokens)
 ## 📊 Design System Maturity Indicators
 
 ### **Strengths**
+
 ✅ **Systematic Color Scales**: 12-step progression for perfect contrast ratios  
 ✅ **Consistent Naming**: Clear, semantic token names  
 ✅ **Performance Optimized**: GPU acceleration, efficient animations  
 ✅ **Accessibility**: Focus indicators, contrast considerations  
 ✅ **Responsive Design**: Mobile-first approach with container queries  
-✅ **Brand Consistency**: Custom fonts and distinctive color palette  
+✅ **Brand Consistency**: Custom fonts and distinctive color palette
 
 ### **Advanced Features**
+
 🔥 **Complex Gradients**: Conic gradients with multiple color stops  
 🔥 **Theme Variants**: Student-specific color palette  
 🔥 **CSS-in-JS Integration**: Generated class names for component isolation  
 🔥 **Custom Font Loading**: Multiple weight/style variants  
-🔥 **Animation Keyframes**: Custom slide and shimmer effects  
+🔥 **Animation Keyframes**: Custom slide and shimmer effects
 
 ## 🚀 Implementation in Design System
 
@@ -115,8 +125,9 @@ The extracted tokens have been integrated into our design system as:
    - @variant syntax for hover/focus states
 
 ### **Available Components**
+
 - `btn-browser-primary` - Primary brand button
-- `btn-browser-secondary` - Purple accent button  
+- `btn-browser-secondary` - Purple accent button
 - `btn-browser-outline` - Outline variant
 - `card-browser` - Standard card component
 - `card-browser-elevated` - Card with enhanced shadow
@@ -125,6 +136,7 @@ The extracted tokens have been integrated into our design system as:
 - `text-browser-body/small/mono` - Text variants
 
 ### **Custom Utilities**
+
 - `animate-browser-pulse` - Brand pulse animation
 - `gradient-browser-rainbow` - Signature conic gradient
 - `blur-sm/md/lg` - Progressive blur effects
