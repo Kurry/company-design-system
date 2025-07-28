@@ -1,0 +1,160 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Code Quality & Linting
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: Lint HTML
+        run: npm run lint:html
+
+      - name: Lint CSS
+        run: npm run lint:css
+
+  test:
+    name: Tests & Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test design tokens
+        run: npm run test:tokens
+
+      - name: Validate package exports
+        run: npm run validate:exports
+
+      - name: Build CSS
+        run: npm run build:css
+
+      - name: Size check
+        run: npm run size-check
+
+  build:
+    name: Production Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [quality, test]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production bundle
+        run: npm run build:minify
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: css-bundle
+          path: dist/
+          retention-days: 30
+
+  performance:
+    name: Performance Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: [build]
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chrome
+        run: npx puppeteer browsers install chrome
+
+      - name: Build CSS
+        run: npm run build:minify
+
+      - name: Run Lighthouse audit
+        run: npm run perf:lighthouse
+
+      - name: Upload performance report
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: reports/
+          retention-days: 30
+
+  release-check:
+    name: Release Readiness
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [quality, test, build]
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Full release pipeline
+        run: npm run release
+
+      - name: Check package publishability
+        run: npm pack --dry-run

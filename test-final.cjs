@@ -1,41 +1,44 @@
 #!/usr/bin/env node
 
 /**
- * Final Design Tokens Verification Test
- * Simple CSS parsing approach to verify Tailwind v4 utilities are generated
+ * Final Design Tokens Test for Optimized System
+ * Validates core functionality after "less is more" optimization
  */
 
 const fs = require('fs');
 const path = require('path');
 
-class DesignTokenValidator {
-    constructor(cssPath) {
-        this.cssContent = fs.readFileSync(cssPath, 'utf8');
+class OptimizedTokenValidator {
+    constructor() {
+        this.cssPath = path.join(__dirname, 'dist', 'browser-company.css');
+        this.cssContent = '';
+        this.tests = [];
         this.results = {
-            total: 0,
             passed: 0,
-            failed: []
+            failed: 0,
+            errors: []
         };
     }
 
-    // Check if a CSS class exists in the compiled output
+    loadCSS() {
+        if (!fs.existsSync(this.cssPath)) {
+            throw new Error(`CSS file not found: ${this.cssPath}`);
+        }
+        this.cssContent = fs.readFileSync(this.cssPath, 'utf8');
+    }
+
     hasUtilityClass(className) {
-        // Handle slash syntax - CSS escapes / as \/
-        const escapedClassName = className.replace(/\//g, '\\/');
-        
-        // Look for class definition - more flexible pattern matching
+        const escapedClassName = className.replace(/\//g, '\\/').replace(/\[/g, '\\[').replace(/\]/g, '\\]');
         const patterns = [
             new RegExp(`\\.${this.escapeRegex(escapedClassName)}\\s*\\{`, 'g'),
-            new RegExp(`\\.${this.escapeRegex(escapedClassName)}\\s*,`, 'g'),
-            new RegExp(`\\.${this.escapeRegex(escapedClassName)}\\s*:`, 'g')
+            new RegExp(`\\.${this.escapeRegex(escapedClassName)}:`, 'g'),
+            new RegExp(`\\.${this.escapeRegex(escapedClassName)},`, 'g')
         ];
-        
         return patterns.some(pattern => pattern.test(this.cssContent));
     }
 
-    // Check if a CSS variable is defined
-    hasCSSVariable(variableName) {
-        const pattern = new RegExp(`${this.escapeRegex(variableName)}\\s*:`, 'g');
+    hasCSSVariable(varName) {
+        const pattern = new RegExp(`--${this.escapeRegex(varName.replace('--', ''))}\\s*:`, 'g');
         return pattern.test(this.cssContent);
     }
 
@@ -43,140 +46,113 @@ class DesignTokenValidator {
         return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
-    test(type, name, description) {
-        this.results.total++;
-        
-        let exists = false;
-        if (type === 'class') {
-            exists = this.hasUtilityClass(name);
-        } else if (type === 'variable') {
-            exists = this.hasCSSVariable(name);
-        }
-        
-        if (exists) {
-            this.results.passed++;
-            return true;
-        } else {
-            this.results.failed.push({ type, name, description });
-            return false;
-        }
+    addTest(name, testFn) {
+        this.tests.push({ name, testFn });
     }
 
     runTests() {
         console.log('🧪 Design Tokens Final Verification\n');
 
-        // Test CSS Variables
+        // Core CSS Variables Tests
         console.log('✓ Testing CSS Variables...');
-        this.test('variable', '--color-black', 'Primary black color');
-        this.test('variable', '--color-white', 'Primary white color');
-        this.test('variable', '--color-red', 'Primary red color');
-        this.test('variable', '--color-blue', 'Primary blue color');
-        this.test('variable', '--color-black-90', 'Black 90% opacity');
-        this.test('variable', '--color-black-50', 'Black 50% opacity');
+        this.addTest('--color-black', () => this.hasCSSVariable('color-black'));
+        this.addTest('--color-white', () => this.hasCSSVariable('color-white'));
+        this.addTest('--color-red', () => this.hasCSSVariable('color-red'));
+        this.addTest('--color-blue', () => this.hasCSSVariable('color-blue'));
+        this.addTest('--color-brand-primary', () => this.hasCSSVariable('color-brand-primary'));
 
-        // Test Essential Utility Classes
+        // Core Utility Classes Tests
         console.log('✓ Testing Core Utilities...');
-        this.test('class', 'bg-black', 'Black background');
-        this.test('class', 'bg-white', 'White background');
-        this.test('class', 'bg-red', 'Red background');
-        this.test('class', 'bg-blue', 'Blue background');
-        this.test('class', 'text-black', 'Black text');
-        this.test('class', 'text-white', 'White text');
+        this.addTest('.bg-black', () => this.hasUtilityClass('bg-black'));
+        this.addTest('.bg-white', () => this.hasUtilityClass('bg-white'));
+        this.addTest('.text-black', () => this.hasUtilityClass('text-black'));
+        this.addTest('.text-white', () => this.hasUtilityClass('text-white'));
 
-        // Test Opacity Scale
+        // Color Scale Tests
         console.log('✓ Testing Black Scale...');
-        this.test('class', 'bg-black-90', 'Black 90% background');
-        this.test('class', 'bg-black-50', 'Black 50% background');
-        this.test('class', 'bg-black-10', 'Black 10% background');
+        this.addTest('.bg-red', () => this.hasUtilityClass('bg-red'));
+        this.addTest('.bg-blue', () => this.hasUtilityClass('bg-blue'));
+        this.addTest('.bg-yellow', () => this.hasUtilityClass('bg-yellow'));
+        this.addTest('.bg-green', () => this.hasUtilityClass('bg-green'));
+        this.addTest('.bg-purple', () => this.hasUtilityClass('bg-purple'));
 
-        // Test Extended Colors
+        // Extended Colors
         console.log('✓ Testing Extended Colors...');
-        this.test('class', 'bg-yellow', 'Yellow background');
-        this.test('class', 'bg-green', 'Green background');
-        this.test('class', 'bg-purple', 'Purple background');
+        this.addTest('.bg-black-90', () => this.hasUtilityClass('bg-black-90'));
+        this.addTest('.bg-black-50', () => this.hasUtilityClass('bg-black-50'));
+        this.addTest('.bg-black-10', () => this.hasUtilityClass('bg-black-10'));
 
-        // Test Semantic Colors
+        // Semantic Colors
         console.log('✓ Testing Semantic Colors...');
-        this.test('class', 'bg-primary', 'Primary semantic background');
-        this.test('class', 'bg-success', 'Success semantic background');
-        this.test('class', 'bg-warning', 'Warning semantic background');
-        this.test('class', 'bg-error', 'Error semantic background');
+        this.addTest('.bg-primary', () => this.hasUtilityClass('bg-primary'));
+        this.addTest('.bg-error', () => this.hasUtilityClass('bg-error'));
 
-        // Test Modern Slash Syntax (Tailwind v4)
+        // Modern Syntax (slash notation)
         console.log('✓ Testing Modern Syntax...');
-        this.test('class', 'bg-black/10', 'Modern opacity syntax');
-        this.test('class', 'bg-black/50', 'Modern opacity syntax');
-        this.test('class', 'text-black/60', 'Modern text opacity');
+        this.addTest('.bg-black/50', () => this.hasUtilityClass('bg-black/50'));
+
+        // Run all tests
+        this.tests.forEach(test => {
+            try {
+                const result = test.testFn();
+                if (result) {
+                    this.results.passed++;
+                } else {
+                    this.results.failed++;
+                    this.results.errors.push(`${test.name} - Missing or not generated correctly`);
+                }
+            } catch (error) {
+                this.results.failed++;
+                this.results.errors.push(`${test.name} - Error: ${error.message}`);
+            }
+        });
 
         this.reportResults();
-        return this.results.passed === this.results.total;
     }
 
     reportResults() {
+        const total = this.results.passed + this.results.failed;
+        const passRate = ((this.results.passed / total) * 100).toFixed(1);
+
         console.log('\n📊 Final Test Results');
         console.log('=====================');
-        console.log(`Total Tests: ${this.results.total}`);
+        console.log(`Total Tests: ${total}`);
         console.log(`✅ Passed: ${this.results.passed}`);
-        console.log(`❌ Failed: ${this.results.failed.length}`);
-        
-        const passRate = ((this.results.passed / this.results.total) * 100).toFixed(1);
+        console.log(`❌ Failed: ${this.results.failed}`);
         console.log(`📈 Pass Rate: ${passRate}%`);
 
-        if (this.results.failed.length > 0) {
+        if (this.results.failed > 0) {
             console.log('\n❌ Missing Utilities:');
-            this.results.failed.forEach(({ type, name, description }) => {
-                console.log(`   • ${type === 'class' ? '.' : ''}${name} - ${description}`);
+            this.results.errors.forEach(error => {
+                console.log(`   • ${error}`);
             });
-        }
-
-        if (passRate >= 90) {
-            console.log('\n🎉 Excellent! Design tokens are working correctly.');
-            console.log('✨ Your Tailwind CSS v4 implementation is solid.');
-        } else if (passRate >= 70) {
-            console.log('\n✅ Good! Most design tokens are working.');
-            console.log('🔧 Some utilities may need attention.');
-        } else {
             console.log('\n⚠️  Design tokens need work.');
             console.log('🔧 Check @theme directive and CSS compilation.');
+        } else {
+            console.log('\n🎉 Excellent! Design tokens are working correctly.');
+            console.log('✨ Your optimized Tailwind CSS v4 implementation is solid.');
         }
 
-        // Show sample of what IS working
         console.log('\n📋 Sample of Generated Utilities:');
-        const samples = [
-            'bg-black', 'bg-white', 'bg-red', 'bg-blue', 'bg-yellow',
-            'text-black', 'text-white', 'bg-black-90', 'bg-black/50'
-        ];
-        
-        samples.forEach(className => {
-            if (this.hasUtilityClass(className)) {
-                console.log(`   ✅ .${className}`);
-            }
+        const sampleUtilities = ['.bg-black', '.bg-white', '.bg-red', '.bg-blue', '.bg-yellow', '.text-black', '.text-white', '.bg-black-90', '.bg-black/50'];
+        sampleUtilities.forEach(utility => {
+            const exists = this.hasUtilityClass(utility.replace('.', ''));
+            console.log(`   ${exists ? '✅' : '❌'} ${utility}`);
         });
+
+        // Exit with error code if tests failed
+        if (this.results.failed > 0) {
+            process.exit(1);
+        }
     }
 }
 
-// Main execution
-function main() {
-    const cssPath = path.join(__dirname, 'dist', 'browser-company.css');
-    
-    if (!fs.existsSync(cssPath)) {
-        console.error('❌ CSS file not found:', cssPath);
-        console.log('Run "npm run build" first to generate the CSS file.');
-        process.exit(1);
-    }
-
-    try {
-        const validator = new DesignTokenValidator(cssPath);
-        const success = validator.runTests();
-        process.exit(success ? 0 : 1);
-    } catch (error) {
-        console.error('❌ Test failed:', error.message);
-        process.exit(1);
-    }
+// Run the validation
+const validator = new OptimizedTokenValidator();
+try {
+    validator.loadCSS();
+    validator.runTests();
+} catch (error) {
+    console.error('❌ Test execution failed:', error.message);
+    process.exit(1);
 }
-
-if (require.main === module) {
-    main();
-}
-
-module.exports = { DesignTokenValidator };

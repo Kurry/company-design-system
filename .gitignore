@@ -8,6 +8,9 @@ pnpm-debug.log*
 # Build outputs
 dist/
 build/
+coverage/
+.nyc_output/
+reports/
 *.tsbuildinfo
 
 # Environment variables
@@ -56,6 +59,16 @@ temp/
 
 # Optional eslint cache
 .eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Prettier cache
+.prettierignore
+
+# Build artifacts
+*.tgz
+*.tar.gz
 
 # Package lock files (choose one based on package manager preference)
 # Uncomment the one you want to ignore:
