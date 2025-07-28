@@ -1,16 +1,7 @@
-/**
- * Optimized Enterprise Design System - Tailwind CSS v4
- * 
- * Reduced from 1800+ lines to ~800 lines by eliminating Tailwind v4 redundancies
- * Focuses on custom brand tokens and truly unique components
- */
 
 @import 'tailwindcss';
 
-/* CSS Cascade Layers for specificity control */
 @layer design-tokens, base, components, utilities;
-
-/* Modern CSS @property declarations for performance */
 @property --color-brand-primary {
   syntax: '<color>';
   inherits: false;
@@ -24,10 +15,6 @@
 }
 
 @theme {
-  /* === CUSTOM BRAND DESIGN TOKENS === */
-  /* Only custom values not provided by Tailwind v4 */
-
-  /* Core Color System - Essential colors for tests */
   --color-black: #000000;
   --color-white: #ffffff;
   --color-red: #fb3a4d;
@@ -36,16 +23,12 @@
   --color-green: #34c759;
   --color-purple: #5d2de6;
 
-  /* Black scale with opacity variants */
   --color-black-90: rgba(0, 0, 0, 0.9);
   --color-black-50: rgba(0, 0, 0, 0.5);
   --color-black-10: rgba(0, 0, 0, 0.1);
 
-  /* Semantic colors */
   --color-primary: #3139fb;
   --color-error: #fb3a4d;
-
-  /* Brand-Specific Colors */
   --color-brand-primary: #3139fb;
   --color-brand-primary-dark: #2404aa;
   --color-brand-primary-darker: #000354;
@@ -57,11 +40,8 @@
   --color-brand-surface: #fffcec;
   --color-brand-surface-alt: #fffcea;
 
-  /* Focus system */
   --color-focus: #96c4ff;
   --color-focus-ring: color-mix(in oklch, var(--color-brand-primary) 20%, transparent);
-
-  /* Dynamic semantic colors using color-mix */
   --color-success: #34c759;
   --color-success-light: color-mix(in oklch, var(--color-success) 15%, white);
   --color-success-dark: color-mix(in oklch, var(--color-success) 20%, black);
@@ -69,8 +49,6 @@
   --color-warning: #ffcc00;
   --color-warning-light: color-mix(in oklch, var(--color-warning) 15%, white);
   --color-warning-dark: color-mix(in oklch, var(--color-warning) 20%, black);
-
-  /* Custom purple scale with color-mix */
   --color-purple-50: color-mix(in oklch, #5d2de6 5%, white);
   --color-purple-100: color-mix(in oklch, #5d2de6 10%, white);
   --color-purple-200: color-mix(in oklch, #5d2de6 20%, white);
@@ -83,7 +61,6 @@
   --color-purple-900: color-mix(in oklch, #5d2de6 60%, black);
   --color-purple-950: color-mix(in oklch, #5d2de6 80%, black);
 
-  /* Brand-specific color palette */
   --color-primary-blue: rgb(12, 80, 255);
   --color-deep-blue: rgb(36, 4, 170);
   --color-dark-blue: rgb(39, 2, 194);
@@ -91,8 +68,6 @@
   --color-accent-green: rgb(211, 224, 129);
   --color-accent-salmon: rgb(242, 194, 172);
   --color-neutral-offwhite: rgb(245, 244, 226);
-
-  /* Custom Typography */
   --font-family-sans:
     Marlin, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -106,14 +81,11 @@
     Marlin Soft SQ, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
-  /* Custom font sizes not in Tailwind defaults */
   --font-size-10: 10px;
   --font-size-32: 32px;
   --font-size-36: 36px;
   --font-size-40: 40px;
   --font-size-48: 48px;
-
-  /* Custom line heights */
   --line-height-12: 12px;
   --line-height-16: 16px;
   --line-height-20: 20px;
@@ -123,20 +95,16 @@
   --line-height-48: 48px;
   --line-height-56: 56px;
 
-  /* Layout constants */
   --layout-padding: 32px;
   --layout-page-padding-left: max(env(safe-area-inset-left), var(--layout-padding));
   --layout-page-padding-right: max(env(safe-area-inset-right), var(--layout-padding));
   --layout-max-width: 1280px;
   --layout-navbar-height: 64px;
   --layout-mobile-cta-height: 56px;
-
-  /* Custom motion system */
   --motion-duration-marquee: 3000ms;
   --motion-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --motion-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-  /* Custom gradients */
   --gradient-conic-rainbow: conic-gradient(
     from 180deg at 50% 50%,
     rgb(140, 172, 255) 0deg,
@@ -157,7 +125,6 @@
 }
 
 @layer base {
-  /* Modern CSS reset */
   *,
   *::before,
   *::after {
@@ -182,7 +149,6 @@
     min-height: 100dvh;
   }
 
-  /* Modern focus management */
   :focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 2px;
@@ -193,7 +159,6 @@
     outline: none;
   }
 
-  /* Improved media defaults */
   img,
   video,
   canvas,
@@ -213,10 +178,6 @@
 }
 
 @layer components {
-  /* === CUSTOM BUSINESS COMPONENTS === */
-  /* Only truly custom components not available in Tailwind v4 */
-
-  /* Modern Button System - Simplified using Tailwind utilities */
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-4 py-2;
     @apply font-medium text-sm leading-tight tracking-tight;
@@ -238,18 +199,14 @@
     }
   }
 
-  /* Brand gradient utility */
   .gradient-rainbow {
     background: var(--gradient-conic-rainbow);
   }
 
-  /* Safe area utility */
   .safe-area {
     padding-left: var(--layout-page-padding-left);
     padding-right: var(--layout-page-padding-right);
   }
-
-  /* Feature Card Component - Custom business component */
   .feature-card {
     display: flex;
     flex-direction: column;
@@ -288,7 +245,6 @@
     outline-offset: 2px;
   }
 
-  /* Content Card Component */
   .content-card {
     border-radius: 16px;
     padding: 16px;
@@ -300,8 +256,6 @@
     flex-direction: column;
     gap: 16px;
   }
-
-  /* Detail Header Layout - Responsive grid for detail pages */
   .detail-header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -327,7 +281,6 @@
     }
   }
 
-  /* Container Component */
   .container {
     width: 100%;
     max-width: var(--layout-max-width);
@@ -339,10 +292,6 @@
 }
 
 @layer utilities {
-  /* === MINIMAL CUSTOM UTILITIES === */
-  /* Only utilities not provided by Tailwind v4 */
-
-  /* Brand color utilities - Use Tailwind utilities with CSS variables */
   .text-brand-primary {
     color: var(--color-brand-primary);
   }
@@ -353,7 +302,6 @@
     border-color: var(--color-brand-primary);
   }
 
-  /* Custom font utilities */
   .font-display {
     font-family: var(--font-family-sans);
   }
@@ -366,8 +314,6 @@
   .font-soft {
     font-family: var(--font-family-soft-sans);
   }
-
-  /* Layout utilities */
   .max-w-layout {
     max-width: var(--layout-max-width);
   }
@@ -376,15 +322,12 @@
   }
 }
 
-/* Dark mode support - Simplified */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-surface: var(--color-gray-900);
     --color-surface-elevated: var(--color-gray-800);
   }
 }
-
-/* Custom animation keyframes - Only unique ones */
 @keyframes pulse-slow {
   0%,
   100% {
@@ -414,30 +357,3 @@
   }
 }
 
-/**
- * === OPTIMIZATION SUMMARY ===
- * 
- * REDUCED FROM: 1800+ lines to ~400 lines (78% reduction)
- * 
- * ELIMINATED:
- * - Redundant utility classes (Tailwind v4 provides them)
- * - Duplicate button variants
- * - Standard animations and transitions
- * - Redundant color utilities
- * - Standard layout utilities
- * - Accessibility utilities (built into Tailwind v4)
- * 
- * KEPT:
- * - Custom brand design tokens
- * - Custom font families
- * - Business-specific components (.feature-card, .content-card)
- * - Custom layout constants
- * - Unique animations and gradients
- * 
- * BENEFITS:
- * - 78% smaller source code
- * - Leverages Tailwind v4 optimization
- * - Better maintainability
- * - Faster build times
- * - Reduced CSS output size
- */
